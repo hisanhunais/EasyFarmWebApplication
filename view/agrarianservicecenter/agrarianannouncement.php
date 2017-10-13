@@ -1,6 +1,4 @@
-<?php
-	//session_start();
-?>
+<?php ob_start();?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -12,14 +10,15 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
-	
-	<link href="../../css/homepage.css" rel="stylesheet">
+    
+    <link href="../../css/homepage.css" rel="stylesheet">
 
-	<script
+    <script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
-<style>
+
+  <style>
 div.scroll {
     
     width: 900px;
@@ -28,7 +27,7 @@ div.scroll {
 }
 
 div.hidden {
-   
+    background-color: #00FF00;
     width: 900px;
     height: 400px;
     overflow: hidden;
@@ -38,66 +37,65 @@ div.hidden {
   </head>
 
   <body>
-	<nav class = "navbar navbar-default">
-		<div class="container">
-			<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-				<span class="sr-only">Toggle Navigation</span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="homefe.php">EasyFarm</a>
-			</div>
-			<div id="navbar" class="collapse navbar-collapse">
-				<!--<ul class="nav navbar-nav">
-					<li class="active"><a href="#">Home</a></li>
-					<li><a href="#about">About</a></li>
-					<li><a href="#contact">Contact</a></li>
-				</ul>-->
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">WELCOME</a></li>
-					<li><a href="index.php">LogOut</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	
-	<section id="breadcrumb">
-		<div class="container-fluid">
-			<ol class="breadcrumb">
-				<li class="active">Agrarian Service Center Profile</li>
-			</ol>
-		</div>
-	</section>
-	
-	<section id="main">
+    <nav class = "navbar navbar-default">
+        <div class="container">
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle Navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="homefe.php">EasyFarm</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <!--<ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>-->
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">WELCOME</a></li>
+                    <li><a href="index.php">LogOut</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section id="breadcrumb">
+        <div class="container-fluid">
+            <ol class="breadcrumb">
+                <li class="active">Agrarian Service Center Profile</li>
+            </ol>
+        </div>
+    </section>
+    
+    <section id="main">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
                 <div class="list-group">
-					  <a href="agrarianhome.php" class="list-group-item ">
-						<span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
-					  </a>
+                      <a href="agrarianhome.php" class="list-group-item ">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
+                      </a>
 
-					  <a href="agrariancreatepro.php" class="list-group-item"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Create Farmer Profiles</a>
-					  <a href="agrarianmeeting.php" class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Meetings</a>
-					  <a href="agrariandiscussion.php" class="list-group-item"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Discussion <span class="badge">12</span></a>
-					  <a href="agrarianannouncement.php" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Posts</a>
-					  <a href="agrarianreport.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
-					</div>
+                      <a href="agrariancreatepro.php" class="list-group-item"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Create Farmer Profiles</a>
+                      <a href="agrarianmeeting.php" class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Meetings</a>
+                      <a href="agrariandiscussion.php" class="list-group-item"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Discussion <span class="badge">12</span></a>
+                      <a href="agrarianannouncement.php" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Posts</a>
+                      <a href="#" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
+                    </div>
             </div>
-			<div class="col-md-9">
-					<div class="panel panel-default">
-					  <!--<div class="panel-heading main-color-bg">
-						<h3 class="panel-title">Home Buyer</h3>
-						
-					  </div>-->
-					  <div class="panel-body">
-						<div class="row">
-							<div class = "col-md-12" id="loadSection">
-								
-							<!DOCTYPE html>
+            <div class="col-md-9">
+                    <div class="panel panel-default">
+                      <!--<div class="panel-heading main-color-bg">
+                        <h3 class="panel-title">Home Buyer</h3>
+                        
+                      </div>-->
+                      <div class="panel-body">
+                        <div class="row">
+                            <div class = "col-md-12" id="loadSection">
+                                <!DOCTYPE html>
 <?php 
   include ('../../controller/func_announcement.php');
 ?>
@@ -131,10 +129,12 @@ div.hidden {
       require_once ('../../controller/connect.php');
        
     ?>
-   <?php
+     <?php
         $errdate="";
         $errtime="";
-        $errpurpose="";
+        $errcategory="";
+        $errtoipc="";
+        $errdes="";
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (empty($_POST["date"])) {
                 $errdate = "Date is required";
@@ -150,15 +150,27 @@ div.hidden {
                 
             }
 
-            if (empty($_POST["purpose"])) {
-                $errpurpose = "Purpose is required";
+            if (empty($_POST["category"])) {
+                $errcategory = "Category is required";
             } else {
-                $purpose = mysqli_real_escape_string($conn, $_POST["purpose"]);
+                $category = mysqli_real_escape_string($conn, $_POST["category"]);
                 
-            }            
+            }   
+            if (empty($_POST["topic"])) {
+                $errtopic = "Topic is required";
+            } else {
+                $topic = mysqli_real_escape_string($conn, $_POST["topic"]);
+                
+            } 
+            if (empty($_POST["des"])) {
+                $errdes = "Description is required";
+            } else {
+                $des = mysqli_real_escape_string($conn, $_POST["des"]);
+                
+            }          
 
-            if($errdate=="" and $errtime=="" and $errpurpose==""){
-                insertmeeting($date,$time,$purpose);
+            if($errdate=="" and $errtime=="" and $errcategory=="" and $errtopic=="" and $errdes==""){
+                insertpost($date,$time,$category,$topic,$des);
             }
         }
     ?>
@@ -168,7 +180,7 @@ div.hidden {
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Posts</h2>
-                        <button class="btn btn-success pull-right"  data-toggle='modal' title="Insert Posts' Details" data-target="#adddata" style="font-family: arial;"><span class="glyphicon glyphicon-plus-sign" >  New</span></button>
+                        <button class="btn btn-success pull-right"  data-toggle='modal' title="Insert Paddy Details" data-target="#adddata" style="font-family: arial;"><span class="glyphicon glyphicon-plus-sign" >  New</span></button>
                         <div class="modal fade" id="adddata" tabindex="-1" role="dialog" aria-labelledby="addLabel">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
@@ -176,7 +188,7 @@ div.hidden {
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               <!-- <h4 class="modal-title" id="addLabel"><center>වී තොරතුරු ඇතුලත් කරන්න </center></h4> -->
                             </div>
-                            <form action="agrarianannouncement.php" method="POST">
+                           <form action="agrarianannouncement.php" method="POST">
                             <div class="modal-body">
                               
                                 
@@ -201,7 +213,7 @@ div.hidden {
                                 </div>
                                  <div class="form-group">
                                   <label >Description</label>
-                                  <input type="textarea" name="des" class="form-control" placeholder=" des" id="des">
+                                  <input type="text" name="des" class="form-control" placeholder=" description" id="des">
                                 </div>                               
                                 <!-- <div class="form-group">
                                   
@@ -217,7 +229,7 @@ div.hidden {
                                     <input type="checkbox"> Check me out
                                   </label> -->
                                 </div>
-                                <button type="submit"  class="btn btn-primary" name="insertannouncement" class="btn btn-success" data-toggle="modal">Submit</button>
+                                <button type="submit"  class="btn btn-primary" name="insertpost" class="btn btn-success" data-toggle="modal">Submit</button>
                                     <!-- <div class="modal fade" id="myModal" role="dialog">
                                     <div class="modal-dialog modal-sm">
                                       <div class="modal-content">
@@ -238,7 +250,7 @@ div.hidden {
                             <!-- <div class="modal-footer">
                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button> 
                                <button type="submit" onclick="" class="btn-success" name="bpaddy">Submit</button> -->
-                            </div> -->
+                            </div>
                             </form>
                           </div>
                         </div>
@@ -252,8 +264,8 @@ div.hidden {
     <script src="js/bootstrap.min.js"></script> -->
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
                      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-                     <div class=scroll>
-                    <?php
+                     <Div class=scroll>
+                   <?php
                     // Include config file
                     require_once '../../controller/connect.php';
                     
@@ -289,14 +301,14 @@ div.hidden {
                                             // echo "<a href='read.php?id=". $row['id'] ."' title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>";
 
                                         
-                                            echo "<a href='updateannouncement.php?postid=". $row['An_ID'] ."' title='Update Record' data-toggle='tooltip' ><button class='btn btn-primary'><span class='glyphicon glyphicon-pencil'>  Update</span></button></a>
+                                            echo "<a href='updateannouncement.php?id=". $row['An_ID'] ."' title='Update Record' data-toggle='tooltip' ><button class='btn btn-primary'><span class='glyphicon glyphicon-pencil'>  Update</span></button></a>
 
 
                                             ";
 
                                         echo "</center></td>";
                                         echo "<td><center>";
-                                            echo "<a href='deleteannouncement.php?postid=". $row['An_ID'] ."' title='Delete Record' data-toggle='tooltip'><button class='btn btn-danger'><span class='glyphicon glyphicon-trash'> Delete</span></button></a>";
+                                            echo "<a href='deleteannouncement.php?id=". $row['An_ID'] ."' title='Delete Record' data-toggle='tooltip'><button class='btn btn-danger'><span class='glyphicon glyphicon-trash'> Delete</span></button></a>";
                                         echo "</center></td>";
                                     echo "</tr>";
                                 }
@@ -322,19 +334,19 @@ div.hidden {
 
     
 </body>
-</html>	
-							</div>
-						</div>
-					  </div>
-					</div>
-				</div>
+</html>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
         </div>
     </div>
 </section>
 
 
 
-	
+    
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js"></script>

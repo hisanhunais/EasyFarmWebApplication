@@ -2,9 +2,9 @@
 	
 
 
-	function insertannouncement(){
+	function insertpost(){
 		include 'connect.php';
-		if(isset($_POST['insertannouncement']))
+		if(isset($_POST['insertpost']))
 		{
 			$date = mysqli_real_escape_string($conn, $_REQUEST['date']);
 			$time = mysqli_real_escape_string($conn, $_REQUEST['time']);
@@ -12,8 +12,8 @@
 			$toipc = mysqli_real_escape_string($conn, $_REQUEST['topic']);
 			$des = mysqli_real_escape_string($conn, $_REQUEST['des']); 
 			// attempt insert query execution
-
-			$sql = "INSERT INTO meetings (`Date`,`Time`,`Category`,`Topic`,`Description`) VALUES ('$date','$time','$category','$topic','$des')";
+			$sql="INSERT INTO `announcement`(`Date`, `Time`, `Category`, `Topic`, `Description`) VALUES ([$date],[$time],[$category],[$topic],[$des])";
+			
 			if(mysqli_query($conn, $sql)){
 			    
 			} else{
@@ -25,11 +25,11 @@
 			mysqli_close($conn);					
 		}
 	}
-	function deleteannouncement(){
+	function deletepost(){
 
-		if(isset($_POST['deleteannouncement'])){
-			$postid = $_GET['postid'];
-			$sql="DELETE FROM `annoucement` WHERE An_ID='$postid'";
+		if(isset($_POST['deletepost'])){
+			$postid = $_GET['id'];
+			$sql="DELETE FROM `annoucement` WHERE  	An_ID='$id'";
 			include 'connect.php';
 			$res=mysqli_query($conn,$sql);
 			  
@@ -39,15 +39,17 @@
 		}
 
 	}
-	function updateannouncement(){
-		if(isset($_POST['updateannouncement'])){
-			$postid = $_POST['postid'];
-			$date=$_POST['date'];;
-			$time=$_POST['time'];;
-			$purpose=$_POST['purpose'];;
-			$sql="UPDATE `meetings` 
-			SET  meetingID = '$meetingid', Date= '$date',Time='$time',Purpose='$purpose'
-			WHERE meetingID='$meetingid'";
+	function updatepost(){
+		if(isset($_POST['updatepost'])){
+			$postid = $_POST['id'];
+			$date=$_POST['date'];
+			$time=$_POST['time'];
+			$category = $_POST['category'];
+			$toipc =$_POST['topic'];
+			$des =$_POST['des']; 
+			$sql="UPDATE `announcement` 
+			SET  An_ID = '$postid', Date= '$date',Time='$time', Category='$category', Topic=$topic, Description=$des
+			WHERE An_ID='postid'";
 			include 'connect.php';
 			$res=mysqli_query($conn,$sql);
 			header('location:agrarianannouncement.php');

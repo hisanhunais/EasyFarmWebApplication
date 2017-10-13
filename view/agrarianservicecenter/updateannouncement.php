@@ -1,5 +1,5 @@
 
-	<?php ob_start();?>
+<?php ob_start();?>	
 
 
 <!DOCTYPE html>
@@ -95,8 +95,8 @@
                                       <div class="modal-body">
                                         
                                           <div class="form-group">
-                                            <label for="postid">Post ID </label>
-                                            <input type="label" name="postid" class="form-control"  id="postid" value=<?php echo $_GET['postid']; ?>>
+                                            <label for="id">Post ID </label>
+                                            <input type="label" name="id" class="form-control"  id="id" value=<?php echo $_GET['id']; ?>>
                                           </div>
                                           <div class="form-group">
                                   
@@ -122,7 +122,7 @@
                                   <input type="label" name="des" class="form-control" placeholder="des" id="des" >
                                 </div>
                                           </div>
-                                          <button type="submit" "<?php include ('../../controller/func_announcement.php'); echo updateannouncement();?>" class="btn btn-default" name="updateannouncement" class="btn-primary">Submit</button>
+                                          <button type="submit" "<?php include ('../../controller/func_announcement.php'); echo updatepost();?>" class="btn btn-default" name="updatepost" class="btn-primary">Submit</button>
                                         
                                       </div>
                                       <div class="modal-footer">

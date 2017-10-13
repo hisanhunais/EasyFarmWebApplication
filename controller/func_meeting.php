@@ -33,7 +33,7 @@
 			$res=mysqli_query($conn,$sql);
 			  
 			  header('location:agrarianmeeting.php');
-			  ob_end_flush();
+			  
 			
 		}
 

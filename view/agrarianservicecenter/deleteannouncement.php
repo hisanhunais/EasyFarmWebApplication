@@ -95,7 +95,7 @@
                             <h4>Are you sure you want to delete this record  ? </h4>  
                             </div>
                             <div class="modal-footer">
-                              <button type="submit" "<?php include ('../../controller/func_announcement.php'); echo deleteannouncement();?>" class="btn btn-primary" name="deleteannouncement">Delete</button> 
+                              <button type="submit" "<?php include ('../../controller/func_announcement.php'); echo deletepost();?>" class="btn btn-primary" name="deletepost">Delete</button> 
                               <a href="agrarianannouncement.php"><button type="button" class="btn btn-danger" name="btncancel">Cancel</button></a> 
                               
                             </div>
