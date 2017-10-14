@@ -83,48 +83,74 @@
 					  <div class="panel-body">
 						<div class="row">
 							<div class = "col-md-12" id="loadSection">
-								<?php
-
-			require '../../dbconfig/config.php';
-
-			$sql="SELECT * FROM discussionforum ORDER BY Date DESC" ; 
-
-			$res=Mysqli_query($con,$sql);
-			echo "<table border=0 class='table table-stripped table-hover'>
-							<tr>
-							
-							<th width='150px'>Date</th>
-							<th width='150px'>Category</th>
-							<th width='150px'>Topic</th>
-							<th width='250px'></th>
-							</tr>
-						
-					";
-					//echo "</table>";
+																<?php
+										require '../../dbconfig/config.php';
+									?>	
+									<?php
+									$forumid = $_GET['id'];
+									$forumID = $_GET['id'];
+									$sql="SELECT * FROM discussionforum WHERE Forum_ID = '$forumID'";
+									$date = "";
+									$time = "";
+									$username = "";
+									$category = "";
+									$topic = "";
+									$post = "";
+									$res=mysqli_query($con,$sql) or die(mysqli_error($con));
+				
+									if($res)
+									{
+										while($row=mysqli_fetch_row($res))
+										{
+											$username = $row[1];
+											$date = $row[2];
+											$time = $row[3];
+											$category = $row[4];
+											$topic = $row[5];
+											$post = $row[6];
+										}
+									}
+				
+		
+									echo	"
+											<p class='pull-right'>Date : $date<br>Time: $time</p>
+											
+											<p>Category : $category</p>
+											<p>Topic : $topic</p>
+											<p>Post : $post</p>
+											
+											";
+											
+			
+			/*		
+			$sql = "SELECT * FROM order_details WHERE order_No = $ordNo";
+			$res=mysqli_query($con,$sql)
+                or die(mysqli_error($con));
+			
+					
 
 			if ($res){
 				while($row=mysqli_fetch_row($res)){
-					//echo "<div class='tbl'>";
-					//echo "<table border=0 >
-						echo "	<tr>
-							<td width='150px'>$row[2]</td>
-							<td width='150px'>$row[4]</td>
-							<td width='150px'>$row[5]</td>
-							
-							<td width='250px'><a href='discussiondetails.php?id=". $row[0] ."' title='View' data-toggle='tooltip' ><button class='btn btn-secondary'><span class=''>View Description</span></button></a></td>
-							
-							</tr>
-						
-					";
-					
-				}
-				echo "</div>";
-				echo "</table>";
-			}else{
-				echo "error";
-			}
+					echo "<div class='tbl'>";
 
-		?>
+					//echo "<table border=0>
+					echo   "<tr>
+							<td>$row[2]</td>
+							<td>$row[3]</td>
+							</tr>";
+							
+					
+					
+
+					echo "</div>";
+				}
+				echo"</table>";
+				echo "</div>";
+				echo "</div>";
+			}else{
+				echo "error".mysql_error();
+			}*/
+	?>
 							</div>
 						</div>
 					  </div>

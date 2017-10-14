@@ -29,16 +29,16 @@
 	}
 	function deletepost(){
 
-		if(isset($_POST['deletepost'])){
+		 if(isset($_POST['deletepost'])){
 			$postid = $_GET['id'];
-			$sql="DELETE FROM `annoucement` WHERE  	An_ID='$postid'";
-			include 'connect.php';
+			$sql="DELETE FROM `announcement` WHERE An_ID='$postid'";
+			require ('connect.php');
 			$res=mysqli_query($conn,$sql);
 			  
-			  header('location:agrarianannouncement.php');
-			  ob_end_flush();
+			 header('location:agrarianannouncement.php');
+		// 	  ob_end_flush();
 			
-		}
+		 }
  
 	}
 	function updatepost(){
