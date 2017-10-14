@@ -166,7 +166,7 @@ div.hidden {
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Meetings</h2>
-                        <button class="btn btn-success pull-right"  data-toggle='modal' title="Insert Paddy Details" data-target="#adddata" style="font-family: arial;"><span class="glyphicon glyphicon-plus-sign" >  New</span></button>
+                        <button class="btn btn-success pull-right"  data-toggle='modal' title="Insert Meetings" data-target="#adddata" style="font-family: arial;"><span class="glyphicon glyphicon-plus-sign" >  New</span></button>
                         <div class="modal fade" id="adddata" tabindex="-1" role="dialog" aria-labelledby="addLabel">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">

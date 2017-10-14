@@ -9,10 +9,10 @@
 			$date = mysqli_real_escape_string($conn, $_REQUEST['date']);
 			$time = mysqli_real_escape_string($conn, $_REQUEST['time']);
 			$category = mysqli_real_escape_string($conn, $_REQUEST['category']);
-			$toipc = mysqli_real_escape_string($conn, $_REQUEST['topic']);
+			$topic = mysqli_real_escape_string($conn, $_REQUEST['topic']);
 			$des = mysqli_real_escape_string($conn, $_REQUEST['des']); 
 			// attempt insert query execution
-			$sql="INSERT INTO `announcement`(`Date`, `Time`, `Category`, `Topic`, `Description`) VALUES ([$date],[$time],[$category],[$topic],[$des])";
+			$sql="INSERT INTO `announcement`(`Date`, `Time`, `Category`, `Topic`, `Description`) VALUES ('$date','$time','$category','$topic','$des')";
 			
 			if(mysqli_query($conn, $sql)){
 			    
@@ -22,14 +22,16 @@
 
 			header('location: agrarianannouncement.php');
 			// Close connection
-			mysqli_close($conn);					
+			mysqli_close($conn);
+			ob_end_flush();
+								
 		}
 	}
 	function deletepost(){
 
 		if(isset($_POST['deletepost'])){
 			$postid = $_GET['id'];
-			$sql="DELETE FROM `annoucement` WHERE  	An_ID='$id'";
+			$sql="DELETE FROM `annoucement` WHERE  	An_ID='$postid'";
 			include 'connect.php';
 			$res=mysqli_query($conn,$sql);
 			  
@@ -37,7 +39,7 @@
 			  ob_end_flush();
 			
 		}
-
+ 
 	}
 	function updatepost(){
 		if(isset($_POST['updatepost'])){
@@ -48,7 +50,7 @@
 			$toipc =$_POST['topic'];
 			$des =$_POST['des']; 
 			$sql="UPDATE `announcement` 
-			SET  An_ID = '$postid', Date= '$date',Time='$time', Category='$category', Topic=$topic, Description=$des
+			SET  An_ID = '$postid', Date= '$date',Time='$time', Category='$category', Topic='$topic', Description='$des'
 			WHERE An_ID='postid'";
 			include 'connect.php';
 			$res=mysqli_query($conn,$sql);

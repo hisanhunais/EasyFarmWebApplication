@@ -1,5 +1,5 @@
+"<?php include ('../../controller/func_announcement.php');?>"
 <?php ob_start();?>
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -96,9 +96,7 @@ div.hidden {
                         <div class="row">
                             <div class = "col-md-12" id="loadSection">
                                 <!DOCTYPE html>
-<?php 
-  include ('../../controller/func_announcement.php');
-?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -133,7 +131,7 @@ div.hidden {
         $errdate="";
         $errtime="";
         $errcategory="";
-        $errtoipc="";
+        $errtopic="";
         $errdes="";
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (empty($_POST["date"])) {
@@ -173,6 +171,7 @@ div.hidden {
                 insertpost($date,$time,$category,$topic,$des);
             }
         }
+
     ?>
     <div class="wrapper">
         <div class="container-fluid">
@@ -180,7 +179,7 @@ div.hidden {
                 <div class="col-md-12">
                     <div class="page-header clearfix">
                         <h2 class="pull-left">Posts</h2>
-                        <button class="btn btn-success pull-right"  data-toggle='modal' title="Insert Paddy Details" data-target="#adddata" style="font-family: arial;"><span class="glyphicon glyphicon-plus-sign" >  New</span></button>
+                        <button class="btn btn-success pull-right"  data-toggle='modal' title="Insert Posts" data-target="#adddata" style="font-family: arial;"><span class="glyphicon glyphicon-plus-sign" >  New</span></button>
                         <div class="modal fade" id="adddata" tabindex="-1" role="dialog" aria-labelledby="addLabel">
                         <div class="modal-dialog" role="document">
                           <div class="modal-content">
@@ -188,7 +187,7 @@ div.hidden {
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                               <!-- <h4 class="modal-title" id="addLabel"><center>වී තොරතුරු ඇතුලත් කරන්න </center></h4> -->
                             </div>
-                           <form action="agrarianannouncement.php" method="POST">
+                           <form action="" method="POST">
                             <div class="modal-body">
                               
                                 
@@ -229,7 +228,7 @@ div.hidden {
                                     <input type="checkbox"> Check me out
                                   </label> -->
                                 </div>
-                                <button type="submit"  class="btn btn-primary" name="insertpost" class="btn btn-success" data-toggle="modal">Submit</button>
+                                <button type="submit"   class="btn btn-primary" name="insertpost" class="btn btn-success" data-toggle="modal">Submit</button>
                                     <!-- <div class="modal fade" id="myModal" role="dialog">
                                     <div class="modal-dialog modal-sm">
                                       <div class="modal-content">
