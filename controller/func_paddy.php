@@ -1,8 +1,8 @@
 <?php
-	require '../controller/connect.php';
+	require '../../controller/connect.php';
 
 	function insertPaddy(){
-		require '../controller/connect.php';
+		require '../../controller/connect.php';
 		if(isset($_POST['insertpaddy']))
 		{
 			$paddytype = mysqli_real_escape_string($conn, $_REQUEST['paddy_type']);
@@ -23,17 +23,18 @@
 			mysqli_close($conn);					
 		}
 	}
-	function deletepaddy(){
-		if(isset($_POST['deletepaddy'])){
-			$paddy_id = $_GET['id'];
+	function deletepaddy($paddyID){
+			require '../../controller/connect.php';
+			//$paddy_id = $_GET['id'];
+			$paddy_id = $paddyID;
 			$sql="DELETE FROM `paddy` WHERE Paddy_ID='$paddy_id'";
 			$res=mysqli_query($conn,$sql);
-			header('location:../view/paddy.php');
-		}
+			header('location:harvest.php');
 
 	}
 	function updatepaddy(){
 		if(isset($_POST['updatepaddy'])){
+			require '../../controller/connect.php';
 			$paddy_id = $_POST['id'];
 			$sql="UPDATE FROM `paddy` WHERE Paddy_ID='$paddy_id'";
 

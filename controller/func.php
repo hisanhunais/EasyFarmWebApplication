@@ -8,12 +8,37 @@
 			$paddytype = mysqli_real_escape_string($conn, $_REQUEST['paddy_type']);
 			$paddyprice = mysqli_real_escape_string($conn, $_REQUEST['paddy_price']);
 			$paddyquantity = mysqli_real_escape_string($conn, $_REQUEST['paddy_quantity']);
-			 
+			$username = "KamalPerera";
+			$rating = 0;
+
+			$query = "SELECT paddy_ID FROM paddy ORDER BY Paddy_date";
+			$query_run = mysqli_query($conn,$query);
+
+
+
+			$i = 1;
+			$oldno = 0;
+			$allRows = mysqli_num_rows($query_run);
+			while($row1 = mysqli_fetch_array($query_run)){
+
+				echo $row1[0];
+				echo nl2br("\n");
+			    if ($allRows == $i) 
+			    {
+
+			        $oldno = (int)substr($row1[0],3);
+			    } 
+			    $i++;
+			}
+			
+			$newno = (string)($oldno + 1);
+			$prefix = "PAD";
+			$newid = $prefix.$newno;
 			// attempt insert query execution
 
-			$sql = "INSERT INTO paddy (`Paddy_type`,`Paddy_price`,`Paddy_quantity`,`Paddy_date`) VALUES ('$paddytype','$paddyprice','$paddyquantity',now())";
+			$sql = "INSERT INTO paddy VALUES ('$newid','$paddytype','$paddyprice','$paddyquantity',now(),'$username','$rating')";
 			if(mysqli_query($conn, $sql)){
-			    
+			    header("location:harvest.php");
 			} else{
 			    echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
 			}
@@ -28,7 +53,7 @@
 			$paddy_id = $_GET['id'];
 			$sql="DELETE FROM `paddy` WHERE Paddy_ID='$paddy_id'";
 			$res=mysqli_query($conn,$sql);
-			header('location:../view/paddy.php');
+			header('location:harvest.php');
 		}
 
 	}
