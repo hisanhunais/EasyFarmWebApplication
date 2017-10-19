@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 	<?php 
-	  include ('../controller/func_paddy.php');
+	  include ('../../controller/func_paddy.php');
 	?>
 	<meta charset="UTF-8">
     <title></title>
@@ -36,14 +36,14 @@
                               
                               <h3 class="modal-title" id="addLabel"><center> <b>!</b> Delete Confirmation</center></h3>
                              </div>
-                            <form action="" method="POST">
+                            <form action="deletepaddy.php?id=<?php echo $_GET['id']; ?>" method="POST">
                             <div class="modal-body"> 
                               <!-- <h4>You are about to delete following record.</h4>  --> 
                              <br>
                              <?php
-                             	require ('../controller/connect.php');
+                             	require ('../../controller/connect.php');
                              	$paddy_id = $_GET['id'];
-                             	$sql="SELECT FROM `paddy` WHERE Paddy_ID='$paddy_id'";
+                             	$sql="SELECT * FROM `paddy` WHERE Paddy_ID='$paddy_id'";
               								$res=mysqli_query($conn,$sql);
               								if($result = mysqli_query($conn, $sql)){
 			                         if(mysqli_num_rows($result) > 0){
@@ -51,11 +51,11 @@
 			                                
 			                            while($row = mysqli_fetch_array($result)){
 			                                    echo "<tr>";
-			                                        echo "<td>" . ['Paddy_ID'] . "</td>";
-			                                        echo "<td>" . ['Paddy_type'] . "</td>";
-			                                        echo "<td>" . ['Paddy_price'] . "</td>";
-			                                        echo "<td>" . ['Paddy_quantity'] . "</td>";
-			                                        echo "<td>" . ['Paddy_date'] . "</td>";
+			                                        echo "<td>" . $row['Paddy_ID'] . "</td>";
+			                                        echo "<td>" . $row['Paddy_type'] . "</td>";
+			                                        echo "<td>" . $row['Paddy_price'] . "</td>";
+			                                        echo "<td>" . $row['Paddy_quantity'] . "</td>";
+			                                        echo "<td>" . $row['Paddy_date'] . "</td>";
 			                                        
 			                                    echo "</tr>";
 			                                 }
@@ -69,8 +69,8 @@
                             <h4>Are you sure you want to delete this record  ? </h4>  
                             </div>
                             <div class="modal-footer">
-                            	<button type="submit" onclick="deletepaddy()" class="btn btn-primary" name="btndelete">Delete</button> 
-                            	<a href="viewpaddysinhala.php"><button type="button" class="btn btn-danger" name="btncancel">Cancel</button></a> 
+                            	<button type="submit" class="btn btn-primary" name="btndelete">Delete</button> 
+                            	<a href="harvest.php"><button type="button" class="btn btn-danger" name="btncancel">Cancel</button></a> 
                               
                             </div>
                             </form>
@@ -80,6 +80,13 @@
                       <p></p>
                     </div>
                     </center>
+
+                    <?php
+                      if(isset($_POST['btndelete']))
+                      {
+                        deletepaddy($paddy_id);
+                      }
+                    ?>
                     <!-- </div> -->
 </body>
 </html>

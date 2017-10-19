@@ -8,17 +8,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Buyer</title>
+    <title>Farmer</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <!--<link href="../../css/bootstrap.min.css" rel="stylesheet">-->
 	
 	<link href="../../css/homepage.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<script
+	<!--<script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script>-->
 
   
 
@@ -34,7 +38,7 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="homefe.php">EasyFarm</a>
+			<a class="navbar-brand" href="home.php">EasyFarm</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
 				<!--<ul class="nav navbar-nav">
@@ -53,7 +57,7 @@
 	<section id="breadcrumb">
 		<div class="container-fluid">
 			<ol class="breadcrumb">
-				<li class="active">Buyer Profile</li>
+				<li class="active">Farmer Profile</li>
 			</ol>
 		</div>
 	</section>
@@ -62,7 +66,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
-                <div class="list-group">
+                <!--<div class="list-group">
                     <a href="home.php" id="homeBtn" class="list-group-item">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
                     </a>
@@ -73,7 +77,8 @@
                     <a href="announcement.php" id="announcementBtn" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Announcements</a>
                     <a href="discussionForum.php" id="discussionBtn" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Discussion Forum</a>
                     <a href="report.php" id="reportBtn" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
-                </div>
+                </div>-->
+                <?php include '../structure/sidebar.php'; ?>
             </div>
 			<div class="col-md-9">
 					<div class="panel panel-default">
@@ -84,7 +89,7 @@
 					  <div class="panel-body">
 						<div class="row">
 							<div class = "col-md-12" id="loadSection">
-								<img src="../../Images/farmfinancetopheader" width="100%">
+								<?php include 'paddyOrderContent.php';?>
 							</div>
 						</div>
 					  </div>
@@ -98,7 +103,7 @@
 
 	
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="js/bootstrap.min.js"></script>-->
   </body>
 </html>

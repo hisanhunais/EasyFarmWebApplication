@@ -14,11 +14,13 @@
     <link href="../../css/bootstrap.min.css" rel="stylesheet">
 	
 	<link href="../../css/homepage.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
 
-	<script
+	<!--<script
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous"></script>-->
 
   
 
@@ -84,7 +86,7 @@
 					  <div class="panel-body">
 						<div class="row">
 							<div class = "col-md-12" id="loadSection">
-								<img src="../../Images/farmfinancetopheader" width="100%">
+								<?php include 'viewannouncements.php'; ?>
 							</div>
 						</div>
 					  </div>

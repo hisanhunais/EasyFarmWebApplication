@@ -160,7 +160,7 @@
                     require_once '../../controller/connect.php';
                     
                     // Attempt select query execution
-                    $sql="SELECT * FROM paddy ORDER BY Paddy_date DESC";
+                    $sql="SELECT * FROM paddy ORDER BY Paddy_date";
                     if($result = mysqli_query($conn, $sql)){
                         if(mysqli_num_rows($result) > 0){
                             echo "<table class='table table-bordered table-striped'>";
@@ -190,7 +190,7 @@
                                             ";
                                         echo "</center></td>";
                                         echo "<td><center>";
-                                            echo "<a href='../view/deletepaddy.php?id=". $row['Paddy_ID'] ."' title='Delete Record' data-toggle='tooltip'><button class='btn btn-danger'><span class='glyphicon glyphicon-trash'> Delete</span></button></a>";
+                                            echo "<a href='deletepaddy.php?id=". $row['Paddy_ID'] ."' title='Delete Record' data-toggle='tooltip'><button class='btn btn-danger'><span class='glyphicon glyphicon-trash'> Delete</span></button></a>";
                                         echo "</center></td>";
                                     echo "</tr>";
                                 }

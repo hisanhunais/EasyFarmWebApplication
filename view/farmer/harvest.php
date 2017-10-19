@@ -62,7 +62,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
-                <div class="list-group">
+                <!--<div class="list-group">
                     <a href="home.php" id="homeBtn" class="list-group-item">
                         <span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
                     </a>
@@ -73,7 +73,8 @@
                     <a href="announcement.php" id="announcementBtn" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Announcements</a>
                     <a href="discussionForum.php" id="discussionBtn" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Discussion Forum</a>
                     <a href="report.php" id="reportBtn" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
-                </div>
+                </div>-->
+                <?php include 'sidebar.php'; ?>
             </div>
 			<div class="col-md-9">
 					<div class="panel panel-default">

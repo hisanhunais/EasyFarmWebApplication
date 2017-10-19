@@ -77,11 +77,19 @@
             </div>
 			<div class="col-md-9">
 					<div class="panel panel-default">
-					  <!--<div class="panel-heading main-color-bg">
-						<h3 class="panel-title">Home Buyer</h3>
+					  <div class="panel-heading main-color-bg">
+						<h3 class="panel-title">Discussion Forum</h3>
 						
-					  </div>-->
+					  </div>
 					  <div class="panel-body">
+					  	<div class="row" style="margin-bottom: 10px;">
+					  		<div class="col-md-offset-10">
+					  			<center>
+					  			<button class="btn btn-success"  data-toggle='modal' title="Insert Paddy Details" data-target="#adddata" style="font-family: arial;"><span class="glyphicon glyphicon-plus-sign" >  New</span></button>
+					  			</center>
+					  		</div>
+					  	
+					  </div>
 						<div class="row">
 							<div class = "col-md-12" id="loadSection">
 								<?php
@@ -134,7 +142,7 @@
     </div>
 </section>
 
-
+<?php include 'footer.php'; ?>
 
 	
     <!-- Placed at the end of the document so the pages load faster -->
