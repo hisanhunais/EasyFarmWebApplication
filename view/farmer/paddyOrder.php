@@ -29,7 +29,7 @@
   </head>
 
   <body>
-	<nav class = "navbar navbar-default">
+	<!--<nav class = "navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -41,11 +41,11 @@
 			<a class="navbar-brand" href="home.php">EasyFarm</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
-				<!--<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
-				</ul>-->
+				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#">WELCOME</a></li>
 					<li><a href="index.php">LogOut</a></li>
@@ -60,7 +60,9 @@
 				<li class="active">Farmer Profile</li>
 			</ol>
 		</div>
-	</section>
+	</section>-->
+
+	<?php include 'header.php'; ?>
 	
 	<section id="main">
     <div class="container-fluid">
@@ -78,7 +80,7 @@
                     <a href="discussionForum.php" id="discussionBtn" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Discussion Forum</a>
                     <a href="report.php" id="reportBtn" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
                 </div>-->
-                <?php include '../structure/sidebar.php'; ?>
+                <?php include 'sidebar.php'; ?>
             </div>
 			<div class="col-md-9">
 					<div class="panel panel-default">
@@ -99,7 +101,7 @@
     </div>
 </section>
 
-
+<?php include 'footer.php'; ?>
 
 	
     <!-- Placed at the end of the document so the pages load faster -->

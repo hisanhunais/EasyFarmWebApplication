@@ -25,7 +25,7 @@
   </head>
 
   <body>
-	<nav class = "navbar navbar-default">
+	<!--<nav class = "navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -37,11 +37,11 @@
 			<a class="navbar-brand" href="homefe.php">EasyFarm</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
-				<!--<ul class="nav navbar-nav">
+				<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
-				</ul>-->
+				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#">WELCOME</a></li>
 					<li><a href="index.php">LogOut</a></li>
@@ -69,7 +69,8 @@
 				<li class="active">Farmer Profile</li>
 			</ol>
 		</div>
-	</section>
+	</section>-->
+	<?php include 'header.php'; ?>
 	
 	<section id="main">
     <div class="container-fluid">
@@ -108,9 +109,10 @@
     </div>
 </section>
 
-<footer id="footer" style="background: #333333; color: #ffffff; text-align: center; padding: 30px; margin-top: 30px;">
+<!--<footer id="footer" style="background: #333333; color: #ffffff; text-align: center; padding: 30px; margin-top: 30px;">
 	<p>Copyright Group 40, &copy; 2017</p>
-</footer>
+</footer>-->
+<?php include 'footer.php'; ?>
 
 
 
