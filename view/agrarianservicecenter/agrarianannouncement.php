@@ -1,5 +1,5 @@
 "<?php include ('../../controller/func_announcement.php');?>"
-
+<?php ob_start();?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -37,7 +37,7 @@ div.hidden {
   </head>
 
   <body>
-    <nav class = "navbar navbar-default">
+    <!--<nav class = "navbar navbar-default">
         <div class="container">
             <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -49,11 +49,11 @@ div.hidden {
             <a class="navbar-brand" href="homefe.php">EasyFarm</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
-                <!--<ul class="nav navbar-nav">
+                <ul class="nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#contact">Contact</a></li>
-                </ul>-->
+                </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">WELCOME</a></li>
                     <li><a href="index.php">LogOut</a></li>
@@ -68,7 +68,9 @@ div.hidden {
                 <li class="active">Agrarian Service Center Profile</li>
             </ol>
         </div>
-    </section>
+    </section>-->
+
+    <?php include 'header.php'; ?>
     
     <section id="main">
     <div class="container-fluid">
@@ -83,7 +85,7 @@ div.hidden {
                       <a href="agrarianmeeting.php" class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Meetings</a>
                       <a href="agrariandiscussion.php" class="list-group-item"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Discussion <span class="badge">12</span></a>
                       <a href="agrarianannouncement.php" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Posts</a>
-                      <a href="#" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
+                      <a href="agrarianreport.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
                     </div>
             </div>
             <div class="col-md-9">
@@ -100,7 +102,7 @@ div.hidden {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Posts Dashboard </title>
+    <title>Announcements Dashboard </title>
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
@@ -178,7 +180,7 @@ div.hidden {
             <div class="row">
                 <div class="col-md-12">
                     <div class="page-header clearfix">
-                        <h2 class="pull-left">Posts</h2>
+                        <h2 class="pull-left">Announcements</h2>
                         <button class="btn btn-success pull-right"  data-toggle='modal' title="Insert Posts" data-target="#adddata" style="font-family: arial;"><span class="glyphicon glyphicon-plus-sign" >  New</span></button>
                         <div class="modal fade" id="adddata" tabindex="-1" role="dialog" aria-labelledby="addLabel">
                         <div class="modal-dialog" role="document">
@@ -228,7 +230,8 @@ div.hidden {
                                     <input type="checkbox"> Check me out
                                   </label> -->
                                 </div>
-                                <button type="submit"   class="btn btn-primary" name="insertpost" class="btn btn-success" data-toggle="modal">Submit</button>
+                                <center>
+                                <button type="submit"   class="btn btn-primary" name="insertpost" class="btn btn-success" data-toggle="modal">Submit</button></center>
                                     <!-- <div class="modal fade" id="myModal" role="dialog">
                                     <div class="modal-dialog modal-sm">
                                       <div class="modal-content">
@@ -263,7 +266,7 @@ div.hidden {
     <script src="js/bootstrap.min.js"></script> -->
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
                      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-                     <Div class=scroll>
+                     <div class=scroll>
                    <?php
                     // Include config file
                     require_once '../../controller/connect.php';
@@ -278,7 +281,7 @@ div.hidden {
                                     echo "<tr>";
                                         
                                        
-                                        echo "<th>Post_ID</th>";
+                                        echo "<th>ID</th>";
                                         echo "<th>Date</th>";
                                         echo "<th>Time</th>";
                                         echo "<th>Category</th>";
@@ -343,7 +346,7 @@ div.hidden {
     </div>
 </section>
 
-
+<?php include 'footer.php'; ?>
 
     
     <!-- Placed at the end of the document so the pages load faster -->

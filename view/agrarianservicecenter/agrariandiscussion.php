@@ -19,13 +19,27 @@
   src="https://code.jquery.com/jquery-3.2.1.js"
   integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
   crossorigin="anonymous"></script>
+  <style>
+div.scroll {
+    
+    width: 900px;
+    height: 400px;
+    overflow: scroll;
+}
 
+div.hidden {
+    background-color: #00FF00;
+    width: 900px;
+    height: 400px;
+    overflow: hidden;
+}
+</style>
   
 
   </head>
 
   <body>
-	<nav class = "navbar navbar-default">
+	<!--<nav class = "navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -37,11 +51,11 @@
 			<a class="navbar-brand" href="homefe.php">EasyFarm</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
-				<!--<ul class="nav navbar-nav">
+				<!<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
-				</ul>-->
+				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#">WELCOME</a></li>
 					<li><a href="index.php">LogOut</a></li>
@@ -56,7 +70,8 @@
 				<li class="active">Agrarian Service Center Profile</li>
 			</ol>
 		</div>
-	</section>
+	</section>-->
+	<?php include 'header.php'; ?>
 	
 	<section id="main">
     <div class="container-fluid">
@@ -83,14 +98,27 @@
 					  <div class="panel-body">
 						<div class="row">
 							<div class = "col-md-12" id="loadSection">
-								<?php
+							<div class="wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header clearfix">
+                        <h2 class="pull-left">Discussion Forum</h2>
+		</div>
+		</div>
+		</div>
+		</div>
+		</div>
+		<div class=scroll>
+			<?php
 
 			require '../../dbconfig/config.php';
 
 			$sql="SELECT * FROM discussionforum ORDER BY Date DESC" ; 
 
 			$res=Mysqli_query($con,$sql);
-			echo "<table border=0 class='table table-stripped table-hover'>
+			echo "<table class='table table-bordered table-striped'>
+							<thead>
 							<tr>
 							
 							<th width='150px'>Date</th>
@@ -98,7 +126,7 @@
 							<th width='150px'>Topic</th>
 							<th width='250px'></th>
 							</tr>
-						
+							</thead>
 					";
 					//echo "</table>";
 
@@ -125,6 +153,7 @@
 			}
 
 		?>
+		</div>
 							</div>
 						</div>
 					  </div>
@@ -134,7 +163,7 @@
     </div>
 </section>
 
-
+<?php include 'footer.php'; ?>
 
 	
     <!-- Placed at the end of the document so the pages load faster -->

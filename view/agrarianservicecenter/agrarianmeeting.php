@@ -37,7 +37,7 @@ div.hidden {
   </head>
 
   <body>
-	<nav class = "navbar navbar-default">
+	<!--<nav class = "navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -49,11 +49,11 @@ div.hidden {
 			<a class="navbar-brand" href="homefe.php">EasyFarm</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
-				<!--<ul class="nav navbar-nav">
+				<!<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
-				</ul>-->
+				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#">WELCOME</a></li>
 					<li><a href="index.php">LogOut</a></li>
@@ -68,7 +68,8 @@ div.hidden {
 				<li class="active">Agrarian Service Center Profile</li>
 			</ol>
 		</div>
-	</section>
+	</section>-->
+    <?php include 'header.php'; ?>
 	
 	<section id="main">
     <div class="container-fluid">
@@ -83,7 +84,7 @@ div.hidden {
 					  <a href="agrarianmeeting.php" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Meetings</a>
 					  <a href="agrariandiscussion.php" class="list-group-item"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Discussion <span class="badge">12</span></a>
 					  <a href="agrarianannouncement.php" class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Posts</a>
-					  <a href="#" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
+					  <a href="agrarianreport.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
 					</div>
             </div>
 			<div class="col-md-9">
@@ -207,7 +208,8 @@ div.hidden {
                                     <input type="checkbox"> Check me out
                                   </label> -->
                                 </div>
-                                <button type="submit"  class="btn btn-primary" name="insertmeeting" class="btn btn-success" data-toggle="modal">Submit</button>
+                                <center>
+                                <button type="submit"  class="btn btn-primary" name="insertmeeting" class="btn btn-success" data-toggle="modal">Submit</button></center>
                                     <!-- <div class="modal fade" id="myModal" role="dialog">
                                     <div class="modal-dialog modal-sm">
                                       <div class="modal-content">
@@ -316,7 +318,7 @@ div.hidden {
     </div>
 </section>
 
-
+<?php include 'footer.php'; ?>
 
 	
     <!-- Placed at the end of the document so the pages load faster -->

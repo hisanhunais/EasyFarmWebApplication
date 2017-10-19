@@ -47,11 +47,11 @@
 			$date=$_POST['date'];
 			$time=$_POST['time'];
 			$category = $_POST['category'];
-			$toipc =$_POST['topic'];
+			$topic =$_POST['topic'];
 			$des =$_POST['des']; 
-			$sql="UPDATE `announcement` 
-			SET  An_ID = '$postid', Date= '$date',Time='$time', Category='$category', Topic='$topic', Description='$des'
-			WHERE An_ID='postid'";
+			
+			
+			$sql="UPDATE `announcement` SET `An_ID`='$postid',`Date`='$date',`Time`='$time',`Category`='$category',`Topic`='$topic',`Description`='$des' WHERE `An_ID`='postid'";
 			include 'connect.php';
 			$res=mysqli_query($conn,$sql);
 			header('location:agrarianannouncement.php');

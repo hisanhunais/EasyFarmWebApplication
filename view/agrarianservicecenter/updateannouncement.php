@@ -1,6 +1,6 @@
 
 
-
+<?php ob_start();?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +25,7 @@
   </head>
 
   <body>
-	<nav class = "navbar navbar-default">
+	<!--<nav class = "navbar navbar-default">
 		<div class="container">
 			<div class="navbar-header">
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -37,11 +37,11 @@
 			<a class="navbar-brand" href="homefe.php">EasyFarm</a>
 			</div>
 			<div id="navbar" class="collapse navbar-collapse">
-				<!--<ul class="nav navbar-nav">
+				<!<ul class="nav navbar-nav">
 					<li class="active"><a href="#">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#contact">Contact</a></li>
-				</ul>-->
+				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="#">WELCOME</a></li>
 					<li><a href="index.php">LogOut</a></li>
@@ -56,7 +56,8 @@
 				<li class="active">Agrarian Service Center Profile</li>
 			</ol>
 		</div>
-	</section>
+	</section>-->
+  <?php include 'header.php'; ?>
 	
 	<section id="main">
     <div class="container-fluid">
@@ -91,11 +92,11 @@
                                         <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button> -->
                                         <h4 class="modal-title" id="addLabel"><center>Update Posts</center></h4>
                                       </div>
-                                      <form action="updateannouncement.php" method="POST">
+                                      <form action="" method="POST">
                                       <div class="modal-body">
                                         
                                           <div class="form-group">
-                                            <label for="id">Post ID </label>
+                                            <label for="id">Announcement ID </label>
                                             <input type="label" name="id" class="form-control"  id="id" value=<?php echo isset($_GET['id']) ? $_GET['id'] : '';?>>
                                           </div>
                                           <div class="form-group">
@@ -122,8 +123,10 @@
                                   <input type="label" name="des" class="form-control" placeholder="des" id="des" >
                                 </div>
                                           </div>
-                                          <button type="submit"   "<?php include ('../../controller/func_announcement.php'); echo updatepost();?>" class="btn btn-default" name="updatepost" class="btn-primary">Submit</button>
-                                        
+                                          <center>
+                                          <button type="submit""<?php include ('../../controller/func_announcement.php'); echo updatepost();?>" class="btn btn-primary" name="updatepost" class="btn-primary">Update</button>
+                                        <a href="agrarianannouncement.php"><button type="button" class="btn btn-danger" name="btncancel">Cancel</button></a>
+                                        </center>
                                       </div>
                                       <div class="modal-footer">
                                         
@@ -140,7 +143,7 @@
     </div>
 </section>
 
-
+<?php include 'footer.php'; ?>
 
 	
     <!-- Placed at the end of the document so the pages load faster -->

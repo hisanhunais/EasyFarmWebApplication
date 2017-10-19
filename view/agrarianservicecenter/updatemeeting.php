@@ -1,4 +1,4 @@
-<<?php ob_start();?>
+<?php ob_start();?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -27,7 +27,7 @@
   </head>
 
   <body>
-  <nav class = "navbar navbar-default">
+  <!--<nav class = "navbar navbar-default">
     <div class="container">
       <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -39,11 +39,11 @@
       <a class="navbar-brand" href="homefe.php">EasyFarm</a>
       </div>
       <div id="navbar" class="collapse navbar-collapse">
-        <!--<ul class="nav navbar-nav">
+        <!<ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
           <li><a href="#about">About</a></li>
           <li><a href="#contact">Contact</a></li>
-        </ul>-->
+        </ul>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">WELCOME</a></li>
           <li><a href="index.php">LogOut</a></li>
@@ -58,7 +58,8 @@
         <li class="active">Agrarian Service Center Profile</li>
       </ol>
     </div>
-  </section>
+  </section>-->
+  <?php include 'header.php'; ?>
   
   <section id="main">
     <div class="container-fluid">
@@ -117,7 +118,9 @@
                                   <input type="label" name="purpose" class="form-control" placeholder=" purpose" id="purpose" >
                                 </div>
                                           </div>
-                                          <button type="submit" "<?php include ('../../controller/func_meeting.php'); echo updatemeeting();?>" class="btn btn-default" name="updatemeeting" class="btn-primary">Submit</button>
+                                          <center><button type="submit" "<?php include ('../../controller/func_meeting.php'); echo updatemeeting();?>" class="btn btn-primary" name="updatemeeting" class="btn-primary">Update</button>
+                                          <a href="agrarianmeeting.php"><button type="button" class="btn btn-danger" name="btncancel">Cancel</button></a>
+                                          </center>
                                         
                                       </div>
                                       <div class="modal-footer">
@@ -134,7 +137,7 @@
         </div>
     </div>
 </section>
-
+<?php include 'footer.php'; ?>
 
 
   
