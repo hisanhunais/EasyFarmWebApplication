@@ -54,12 +54,18 @@ if(isset($_POST['orderno']))
 		$displayResult .= '
 			<center>
 			<form method="post" id="update_status">
-				<p><input type="submit" value="Accept" class="btn btn-primary btn-sm" name="accept" id="accept" style="margin-right:10px;" />
-				<input type="button" value="Reject" class="btn btn-danger btn-sm" name="reject" id="reject" style="margin-left:10px;" /></p>
+				<p><input type="button" value="Accept" class="btn btn-primary btn-sm" name="accept" id="accept" onclick="updateStatus(1)" style="margin-right:10px;" />
+				<input type="button" value="Reject" class="btn btn-danger btn-sm" name="reject" id="reject" onclick="updateStatus(0)" style="margin-left:10px;" /></p>
 			</form>
-			<center>
+			</center>
 			';		
 	}
 	echo $displayResult;
 }
 ?>
+
+ <script type="text/javascript">
+	function updateStatus(status){
+		
+	}
+</script>

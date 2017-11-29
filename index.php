@@ -1,6 +1,12 @@
 <?php
-	//session_start();
+	session_start();
 	require 'dbconfig/config.php';
+
+	if(isset($_SESSION['username']))
+	{
+		session_unset();
+		session_destroy();
+	}
 	
 ?>
 
@@ -48,18 +54,22 @@
 			
 			if(mysqli_num_rows($query_run)>0)
 			{
-					//$_SESSION['username']=$username;
+					$_SESSION['username']=$username;
 					if($type=="Farmer")
 					{
-					header("location:home5.php");
+					header("location:view/farmer/home.php");
+					}
+					if($type=="Paddy Marketing Board" or $type=="Mill Owner" or $type=="Store Owner")
+					{
+					header("location:view/buyer/home.php");	
 					}
 					if($type=="Fertilizer Seller")
 					{
-					header("location:homefe.php");	
+					header("location:view/fertilizer/home.php");	
 					}
 					if($type=="Agrarian Service")
 					{
-					header("location:agrarianhome.php");	
+					header("location:view/agrarianservicecenter/agrarianhome.php");	
 					}
 			}
 			else
