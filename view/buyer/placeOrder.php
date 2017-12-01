@@ -11,9 +11,10 @@
 			$type = "paddy";
 			$status = "pending";
 			$product = $_GET["product"];
-			$transport = "";
+			$transport = $_POST["delivery"];
 			$query = "SELECT Ord_No FROM orderTable";
 			$query_run = mysqli_query($con,$query);
+			$availableqty = $_POST["availableqty"];
 			
 			$oldno = mysqli_num_rows($query_run);
 			$newno = (string)($oldno + 1);
@@ -25,6 +26,10 @@
 			$sql6="INSERT INTO orderTable VALUES('$newid','$date','$total','$product','$need','$buyerUsername','$sellerUsername','$type','$transport','$status')";
 
 			$res6=mysqli_query($con,$sql6);
+
+			$newqty = $availableqty - $need;
+			$sql7 = "UPDATE paddy SET Paddy_quantity = '$newqty' WHERE Paddy_ID = '$id'";
+			$res7=mysqli_query($con,$sql7);
 			
 			header("location:productPage.php?id=$id");
 		}
