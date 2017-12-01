@@ -63,17 +63,7 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3">
-                <div class="list-group">
-					  <a href="agrarianhome.php" class="list-group-item ">
-						<span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home
-					  </a>
-
-					  <a href="agrariancreatepro.php" class="list-group-item active main-color-bg"><span class="glyphicon glyphicon-grain" aria-hidden="true"></span> Create Farmer Profiles</a>
-					  <a href="agrarianmeeting.php" class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Meetings</a>
-					  <a href="agrariandiscussion.php" class="list-group-item"><span class="glyphicon glyphicon-bullhorn" aria-hidden="true"></span> Discussion <span class="badge">12</span></a>
-					  <a href="agrarianannouncement.php" class="list-group-item"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Posts</a>
-					  <a href="agrarianreport.php" class="list-group-item"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
-					</div>
+				<?php include 'sidebar.php'; ?>
             </div>
 			<div class="col-md-9">
 					<div class="panel panel-default">
