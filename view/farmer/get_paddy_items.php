@@ -1,7 +1,7 @@
 <?php
 require("../../dbconfig/config.php");
 
-$sql = "SELECT * FROM fertilizer";
+$sql = "SELECT * FROM paddy";
 $rs_result = mysqli_query($con,$sql);
 
 while($row = mysqli_fetch_row($rs_result)) 

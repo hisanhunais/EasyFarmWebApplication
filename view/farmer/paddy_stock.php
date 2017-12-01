@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Fertilizer Seller</title>
+    <title>Farmer</title>
 
     <!-- Bootstrap core CSS -->
    <!-- <link href="../../css/bootstrap.min.css" rel="stylesheet">-->
@@ -64,7 +64,7 @@
 											</thead>
 											<tbody>
 												<?php
-													include 'get_fertilizer_items.php';
+													include 'get_paddy_items.php';
 												?>
               								</tbody>
 										</table>
@@ -101,7 +101,7 @@
 					<br>
 					<!--<label>Image</label>
 					<input type="file" name="file_name" id="item_image" />-->
-					<input type="hidden" name="fertilizerID" id="fertilizerID">
+					<input type="hidden" name="paddyID" id="paddyID">
 				</div>
 				<div class="modal-footer">
 					<input type="submit" name="submit" value="Submit" id="insert" class="btn main-color-bg" />
@@ -158,18 +158,18 @@
 		});
 
 		$(document).on('click', '.edit_data', function(){
-			var fertilizerID = $(this).attr("id");
+			var paddyID = $(this).attr("id");
 			$.ajax({
 				url:"fetch_stock.php",
 				method:"POST",
-				data:{fertilizerID:fertilizerID},
+				data:{paddyID:paddyID},
 				dataType:"json",
 				success:function(data)
 				{
-					$('#item_name').val(data.Fer_type);
-					$('#item_qty').val(data.Fer_quantity);
-					$('#item_price').val(data.Fer_price);
-					$('#fertilizerID').val(data.Fer_ID);
+					$('#item_name').val(data.Paddy_type);
+					$('#item_qty').val(data.Paddy_quantity);
+					$('#item_price').val(data.Paddy_price);
+					$('#paddyID').val(data.Paddy_ID);
 					$('#insert').val('Update');
 					$('#addStock').modal('show');
 				}
@@ -178,8 +178,8 @@
 		});
 
 		$(document).on('click', '.delete_data', function(){
-			var del_fertilizerID = $(this).attr("id");
-			$('#deletedata').val(del_fertilizerID);
+			var del_paddyID = $(this).attr("id");
+			$('#deletedata').val(del_paddyID);
 			$('#deleteStock').modal('show');
 		});
 
