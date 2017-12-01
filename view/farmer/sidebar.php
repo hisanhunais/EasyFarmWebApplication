@@ -9,7 +9,7 @@ switch(basename($_SERVER['PHP_SELF'])) {
         $homeActive = $active;
     break;
 
-    case 'harvest.php':
+    case 'paddy_stock.php':
         $harvestActive = $active;
     break;
 
@@ -48,7 +48,7 @@ switch(basename($_SERVER['PHP_SELF'])) {
 
 <div class="list-group">
     <a href="home.php" id="homeBtn" class="list-group-item <?php echo $homeActive;?>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
-    <a href="harvest.php" id="harvestBtn" class="list-group-item <?php echo $harvestActive;?>"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Harvest</a>
+    <a href="paddy_stock.php" id="harvestBtn" class="list-group-item <?php echo $harvestActive;?>"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Harvest</a>
     <a href="paddyOrder.php" id="paddyOrderBtn" class="list-group-item <?php echo $paddyOrderActive;?>"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Paddy Orders</a>
     <a href="fertilizerOrder.php" id="fertilizerOrderBtn" class="list-group-item <?php echo $fertilizerOrderActive;?>"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Fertilizer Orders</a>
     <a href="transport.php" id="transportBtn" class="list-group-item <?php echo $transportActive;?>"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span> Transport</a>

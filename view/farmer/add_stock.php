@@ -8,7 +8,7 @@
 
 		if(isset($_POST['deletedata']))
 		{
-			$query = "DELETE FROM fertilizer WHERE Fer_ID = '".$_POST['deletedata']."'";
+			$query = "DELETE FROM paddy WHERE Paddy_ID = '".$_POST['deletedata']."'";
 			$message = "Data Deleted";
 		}
 		else
@@ -20,15 +20,15 @@
 		$date = $date1->format('Y-m-d');
 		$username = "AmalPerera";
 
-		if($_POST['fertilizerID'] != '')
+		if($_POST['paddyID'] != '')
 		{
-			$query = "UPDATE fertilizer SET Fer_type = '$name', Fer_price = '$price', Fer_quantity = '$qty' WHERE Fer_ID = '".$_POST['fertilizerID']."'";
+			$query = "UPDATE paddy SET Paddy_type = '$name', Paddy_price = '$price', Paddy_quantity = '$qty' WHERE Paddy_ID = '".$_POST['paddyID']."'";
 			$message = "Data Updated";
 				
 		}
 		else
 		{
-			$query = "INSERT INTO fertilizer VALUES('7','$name','$price','$qty','$date','$username')";
+			$query = "INSERT INTO paddy VALUES('PAD7','$name','$price','$qty','$date','$username',0)";
 			$message = "Data Inserted";	
 		}
 		}
@@ -38,7 +38,7 @@
 		if(mysqli_query($conn,$query))
 		{
 			$output .= '<label class="text-success">'.$message.'</label>';
-			$select_query = "SELECT * FROM fertilizer";
+			$select_query = "SELECT * FROM paddy";
 			$result = mysqli_query($conn,$select_query);
 			$output .= '
 				<table class="table table-bordered">
