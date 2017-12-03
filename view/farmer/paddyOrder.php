@@ -91,7 +91,7 @@
 					  <div class="panel-body">
 						<div class="row">
 							<div class = "col-md-12" id="loadSection">
-								<?php include 'paddyOrderContent.php';?>
+								<?php include 'paddyOrderContent1.php';?>
 							</div>
 						</div>
 					  </div>

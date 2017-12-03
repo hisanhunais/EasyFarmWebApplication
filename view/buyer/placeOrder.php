@@ -9,7 +9,7 @@
 			$sellerUsername = $_GET["selUser"]; 
 			$date = date("Y-m-d");
 			$type = "paddy";
-			$status = "pending";
+			$status = "Pending";
 			$product = $_GET["product"];
 			$transport = $_POST["delivery"];
 			$query = "SELECT Ord_No FROM orderTable";

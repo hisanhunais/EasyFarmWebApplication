@@ -48,7 +48,7 @@ if(isset($_POST['orderno']))
 
 	$displayResult .= "</table></div>";
 
-	if($status == "pending")
+	if($status == "Pending")
 	{
 
 		$displayResult .= '
