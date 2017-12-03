@@ -1,9 +1,23 @@
+<?php ob_start();?>
 <html>
 
-	<body>
-		      <form  method="POST" id="add_data_form">
-              
+  <body>
+    
+      <button class="btn btn-success pull-right"  data-toggle='modal' title="Insert Posts" data-target="#adddata" style="font-family: arial;"><span class="glyphicon glyphicon-plus-sign" >  Add</span>
+      </button>
 
+       <!-- Modal -->
+      <div class="modal fade" id="adddata" role="dialog">
+        <div class="modal-dialog">
+    
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Add Announcement</h4>
+            </div>
+            <form action="func_announcement.php" method="POST" id="add_data_form">
+              <div class="modal-body">
                               
                 <div class="form-group">                
                   <label >Date</label>
@@ -29,17 +43,21 @@
                   <label >Description</label>
                   <input type="text" name="des" class="form-control" placeholder=" description" id="des">
                 </div>                               
-                <div class="form-group">
-                  
 
-                  <input type="hidden" name="An_ID"  id="An_ID">
-                </div> 
                 <center>
-                  <button type="submit"  class="btn btn-primary" name="insertpost" id="insertpost" class="btn btn-success" data-toggle="modal">Update</button>
+                  <button type="submit"  class="btn btn-primary" name="insertpost" class="btn btn-success" data-toggle="modal">Submit</button>
                 </center>
-              
-
+              </div>
             </form>
-	</body>
-		
+
+          </div>
+      
+        </div>
+      </div>
+  
+    
+
+  </body> 
+   
 </html>
+

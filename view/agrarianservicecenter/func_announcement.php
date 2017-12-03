@@ -2,10 +2,13 @@
 	
 
 
-	function insertpost(){
-		include 'connect.php';
+
+require '../../controller/connect.php';
+	// function insertpost(){
+		
 		if(isset($_POST['insertpost']))
 		{
+
 			$date = mysqli_real_escape_string($conn, $_REQUEST['date']);
 			$time = mysqli_real_escape_string($conn, $_REQUEST['time']);
 			$category = mysqli_real_escape_string($conn, $_REQUEST['category']);
@@ -20,28 +23,29 @@
 			    echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
 			}
 
-			header('location: agrarianannouncement.php');
-			// Close connection
-			mysqli_close($conn);
-			ob_end_flush();
+		header('location: agrarianannouncement.php');
+		// 	// Close connection
+		mysqli_close($conn);
+		// 	//ob_end_flush();
 								
 		}
-	}
-	function deletepost(){
-
+	//}
+	//function deletepost(){
+		//require '../../controller/connect.php';
 		 if(isset($_POST['deletepost'])){
 			$postid = $_GET['id'];
 			$sql="DELETE FROM `announcement` WHERE An_ID='$postid'";
-			require ('connect.php');
+			require ('../connect.php');
 			$res=mysqli_query($conn,$sql);
 			  
 			 header('location:agrarianannouncement.php');
-		// 	  ob_end_flush();
+			  //ob_end_flush();
 			
 		 }
  
-	}
+	//}
 	function updatepost(){
+		include '../connect.php';
 		if(isset($_POST['updatepost'])){
 			$postid = $_POST['id'];
 			$date=$_POST['date'];
