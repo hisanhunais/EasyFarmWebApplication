@@ -5,17 +5,29 @@
 <html>
 <head>
 	<!--<link rel="stylesheet" type="text/css" href="../../css/modal_image.css">-->
+
+	<script type="text/javascript">
+	function PreviewImage()
+	{
+		var oFReader = new FileReader();
+		oFReader.readAsDataURL(document.getElementById("imgLink").files[0]);
+		oFReader.onload = function(oFREvent)
+		{
+			document.getElementById("uploadPreview").src = oFREvent.target.result;
+		};
+	};
+</script>
 </head>
 <body>
 
 <?php
-	$sql1="SELECT * FROM ordertable WHERE seller_username = 'KamalPerera' AND status = 'Pending' ORDER BY ord_Date DESC";
+	$sql1="SELECT * FROM ordertable WHERE buyer_username = 'Nimal' AND status = 'Pending' ORDER BY ord_Date DESC";
 	$res1=mysqli_query($con,$sql1) or die(mysqli_error($con));
 
-	$sql2="SELECT * FROM ordertable WHERE seller_username = 'KamalPerera' AND status = 'Dispatched' ORDER BY ord_Date DESC";
+	$sql2="SELECT * FROM ordertable WHERE buyer_username = 'Nimal' AND status = 'Dispatched' ORDER BY ord_Date DESC";
 	$res2=mysqli_query($con,$sql2) or die(mysqli_error($con));
 
-	$sql3="SELECT * FROM ordertable WHERE seller_username = 'KamalPerera' AND status = 'Completed' ORDER BY ord_Date DESC";
+	$sql3="SELECT * FROM ordertable WHERE buyer_username = 'Nimal' AND status = 'Completed' ORDER BY ord_Date DESC";
 	$res3=mysqli_query($con,$sql3) or die(mysqli_error($con));
 ?>
 	<ul class="nav nav-tabs">
@@ -52,18 +64,10 @@
 				<td><input type="button" name="view" value="View Details" id="<?php echo $row[0]; ?>" class="view_details btn btn-info btn-xs" /></td>
 				<td>
 		<?php
-			if($row[8] == "No")
-			{
-		?>
-				<input type="button" name="completeview" value="Complete Order" id="<?php echo $row[0]; ?>" class="complete_order btn btn-info btn-xs" />
-		<?php
-			}
-		?>
-		<?php
 			if($row[10] != "None")
 			{
 		?>
-				<input type="button" name="proceedview" value="Proceed Order" id="<?php echo $row[0]; ?>" class="proceed_order btn btn-info btn-xs" />
+				<input type="button" name="attachview" value="Attach Receipt" id="<?php echo $row[0]; ?>" class="attach_receipt btn btn-info btn-xs" />
 		<?php
 			}
 		?>  
@@ -151,41 +155,27 @@
 	</div>
 </div>
 
-<div id="completeOrder" class="modal fade">
+<div id="attachReceipt" class="modal fade">
 	<div class="modal-dialog">
-		<form method="post" id="complete_order_form">
+		<form method="post" id="attach_receipt_form" enctype="multipart/form-data">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Complete Order</h4>
+					<h4 class="modal-title">Attach Receipt</h4>
 				</div>
 				<div class="modal-body">
-					<p>Are you sure you want to Complete this Order?</p>
-					<input type="hidden" name="completedata" id="completedata">
+					<center>
+					<input type="file" id="imgLink" name="imgLink" accept=".jpg,.jpeg,.png" onchange="PreviewImage();">
+					<br>
+					
+					<div>
+						<img id="uploadPreview" src="http://placehold.it/500x300" alt="" width="500px" height="300px">
+						<input type="hidden" name="attachdata" id="attachdata">
+					</div>
+					</center>
 				</div>
 				<div class="modal-footer">
-					<input type="submit" name="submit" value="Complete" id="complete" class="btn main-color-bg" />
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
-			</div>
-		</form>
-	</div>
-</div>	
-
-<div id="proceedOrder" class="modal fade">
-	<div class="modal-dialog">
-		<form method="post" id="proceed_order_form">
-			<div class="modal-content">
-				<div class="modal-header">
-					<button type="button" class="close" data-dismiss="modal">&times;</button>
-					<h4 class="modal-title">Proceed Order</h4>
-				</div>
-				<div class="modal-body">
-					<p>Are you sure you want to Proceed this Order?</p>
-					<input type="hidden" name="proceeddata" id="proceeddata">
-				</div>
-				<div class="modal-footer">
-					<input type="submit" name="submit" value="Proceed" id="proceed" class="btn main-color-bg" />
+					<input type="submit" name="submit" value="Submit" id="submitReceipt" class="btn main-color-bg" />
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -239,22 +229,25 @@
 			});
 		});
 
-		$(document).on('click', '.proceed_order', function(){
-			var proc_ordID = $(this).attr("id");
-			$('#proceeddata').val(proc_ordID);
-			$('#proceedOrder').modal('show');
+		$(document).on('click', '.attach_receipt', function(){
+			var attach_ordID = $(this).attr("id");
+			$('#attachdata').val(attach_ordID);
+			$('#attachReceipt').modal('show');
 		});
 
-		$('#proceed_order_form').on('submit',function(event){
+		$('#attach_receipt_form').on('submit',function(event){
 			event.preventDefault();
 			$.ajax({
-				url:"processOrder.php",
+				url:"processReceipt.php",
 				method:"POST",
-				data:$('#proceed_order_form').serialize(),
+				data:new FormData(this),
+				contentType: false,
+				cache: false,
+				processData:false,
 				success:function(data)
 				{
-					$('#proceed_order_form')[0].reset();
-					$('#proceedOrder').modal('hide');
+					$('#attach_receipt_form')[0].reset();
+					$('#attachReceipt').modal('hide');
 					$('#pending').html(data);
 				}
 			});
@@ -282,6 +275,8 @@
 
 
 </script>
+
+
 
 <script type="text/javascript">
 	function openimage()

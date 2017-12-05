@@ -29,7 +29,7 @@
 	  <div id="pending" class="tab-pane fade in active">
 	  	<table class ="table table-striped table-hover">
 		<tr>
-			<th>Order Number</th>
+			<th>Order Number1</th>
 			<th>Date</th>
 			<th>Total</th>
 			<th>Buyer</th>

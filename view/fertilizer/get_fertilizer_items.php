@@ -1,5 +1,5 @@
 <?php
-require("../../dbconfig/config.php");
+/*require("../../dbconfig/config.php");
 
 $sql = "SELECT * FROM fertilizer";
 $rs_result = mysqli_query($con,$sql);
@@ -16,5 +16,27 @@ while($row = mysqli_fetch_row($rs_result))
 		<td width="10%"><input type="button" name="delete" value="Delete" id="<?php echo $row[0]; ?>" class="btn btn-info btn-xs delete_data" ></td>
   </tr>
 <?php              								 
-}
+}*/
+
+
+
+require("../../dbconfig/config.php");
+
+$sql = "SELECT * FROM fertilizer";
+$rs_result = mysqli_query($con,$sql);
+$output = '';
+
+while($row = mysqli_fetch_row($rs_result)) 
+{
+	$output .= '<tr>
+  	<td width="20%">'.$row[1].'</td>
+		<td width="20%">'.$row[2].'</td>
+		<td width="20%">'.$row[3].'</td>
+		<td width="20%">Image<!--<img src="<?php echo $imgsrc; ?>" width="50" height="35" class="img-thumbnail" alt="image">--></td>
+		<td width="10%"><input type="button" name="edit" value="Edit" id="'.$row[0].'" class="btn btn-info btn-xs edit_data" ></td>
+		<td width="10%"><input type="button" name="delete" value="Delete" id="'.$row[0].'" class="btn btn-info btn-xs delete_data" ></td>
+  </tr>';
+ }
+ echo $output; 
+
 ?>                                
