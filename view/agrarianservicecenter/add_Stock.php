@@ -8,7 +8,7 @@
 
 		if(isset($_POST['deletedata']))
 		{
-			$query = "DELETE FROM login WHERE username = '".$_POST['deletedata']."'";
+			$query = "DELETE FROM announcement An_ID WHERE username = '".$_POST['deletedata']."'";
 			$message = "Data Deleted";
 		}
 		else

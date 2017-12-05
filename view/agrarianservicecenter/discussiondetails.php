@@ -106,7 +106,7 @@
 
 								?>
 
-									<form method="POST" action="insertComments.php?id=<?php echo $forumid?>" accept-charset="UTF-8">                 
+									<form method="POST" action="insertcomment.php?id=<?php echo $forumid?>" accept-charset="UTF-8">                 
 										<textarea rows="5" id="new-review" class="form-control animated" placeholder="Enter your review here..." name="comment" cols="50"></textarea><br>                  
 										<div class="text-right">
 											<button name="commentButton" class="btn btn-success btn-green" type="submit">Save</button>
