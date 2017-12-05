@@ -32,10 +32,10 @@ require '../../controller/connect.php';
 	//}
 	//function deletepost(){
 		//require '../../controller/connect.php';
-		 if(isset($_POST['deletepost'])){
+		 if(isset($_POST['delete'])){
 			$postid = $_GET['id'];
 			$sql="DELETE FROM `announcement` WHERE An_ID='$postid'";
-			require ('../connect.php');
+			//require ('../connect.php');
 			$res=mysqli_query($conn,$sql);
 			  
 			 header('location:agrarianannouncement.php');
