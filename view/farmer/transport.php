@@ -86,7 +86,7 @@
 					  <div class="panel-body">
 						<div class="row">
 							<div class = "col-md-12" id="loadSection">
-								<img src="../../Images/farmfinancetopheader" width="100%">
+								<?php include 'transportContent.php'; ?>
 							</div>
 						</div>
 					  </div>

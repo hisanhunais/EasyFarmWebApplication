@@ -1,37 +1,68 @@
+<<<<<<< HEAD
 <?php 
   include ('../../controller/func_agcnew.php');
+=======
+<?php
+  //session_start();
+>>>>>>> dda8576583d5497a92bfbe8a7eef899180552343
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>Agrarian Service Center</title>
+      <title>Agrarian Service Center</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-	
-	<link href="../../css/homepage.css" rel="stylesheet">
+      <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  
+    <link href="../../css/homepage.css" rel="stylesheet">
 
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-  crossorigin="anonymous"></script>
-    <style type="text/css">
-        .wrapper{
-            width: 900px;
-            margin: 0px;
-        }
-        .page-header h2{
-            margin-top: 0;
-        }
-        table tr td:last-child a{
-            margin-right: 5px;
-        }
-        </style>
+    <script
+
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+          
+      </script>
+
   
 
+    </head>
+
+    <body>
+
+    <?php include 'header.php'; ?>
+  
+    <section id="main">
+        <div class="container-fluid">
+            <div class="row">
+              <!-- include side bar -->
+                <div class="col-md-3">
+                     <?php include 'sidebar.php'; ?>
+                </div>
+
+          <div class="col-md-9">
+            <div class="panel panel-default">
+                      <div class="panel-heading main-color-bg">
+                        <h3 class="panel-title">Reports</h3>
+                        
+                      </div>
+
+                <div class="panel-body">
+                <div class="row">
+
+                  <div class = "col-md-12" id="loadSection">
+                    <img src="../../Images/farmfinancetopheader" width="100%">
+                  </div>
+
+                </div>
+
+                </div>
+
+<<<<<<< HEAD
   </head>
 
   <body>
@@ -139,44 +170,101 @@
 //                 total_production();
 ////                paddytype_details();
 //              ?>
-            </div>
-            <div id="menu1" class="tab-pane fade">
-              <h3>Menu 1</h3>
-              <p>Some content in menu 1.</p>
-            </div>
-            <div id="menu2" class="tab-pane fade">
-              <h3>Menu 2</h3>
-              <p>Some content in menu 2.</p>
+=======
+>>>>>>> dda8576583d5497a92bfbe8a7eef899180552343
             </div>
           </div>
-          <div name='annual'>
-            
-          </div>
-		      </div>
-		    <div class="panel-footer">
+            </div>
 
-		    	
-		    </div>
-    		</div>
-
-   		</div>
-   	</div>
-							</div>
-						</div>
-					  </div>
-					</div>
-				</div>
         </div>
-    </div>
-</section>
-<?php include 'footer.php'; ?>
+    </section>
+
+    <?php include 'footer.php'; ?>
 
 
-	
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+  
+      <!-- Placed at the end of the document so the pages load faster -->
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+      <script src="js/bootstrap.min.js"></script>
+    </body>
 </html>
+<?php
+  //session_start();
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <title>Agrarian Service Center</title>
+
+    <!-- Bootstrap core CSS -->
+      <link href="../../css/bootstrap.min.css" rel="stylesheet">
+  
+    <link href="../../css/homepage.css" rel="stylesheet">
+
+    <script
+
+        src="https://code.jquery.com/jquery-3.2.1.js"
+        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+        crossorigin="anonymous">
+          
+      </script>
+
+  
+
+    </head>
+
+    <body>
+
+    <?php include 'header.php'; ?>
+  
+    <section id="main">
+        <div class="container-fluid">
+            <div class="row">
+              <!-- include side bar -->
+                <div class="col-md-3">
+                     <?php include 'sidebar.php'; ?>
+                </div>
+
+          <div class="col-md-9">
+            <div class="panel panel-default">
+
+                <div class="panel-body">
+                <div class="row">
+
+                  <div class = "col-md-12" id="loadSection">
+                    <img src="../../Images/farmfinancetopheader" width="100%">
+                  </div>
+
+                </div>
+
+                </div>
+
+            </div>
+          </div>
+            </div>
+
+        </div>
+    </section>
+
+    <?php include 'footer.php'; ?>
+
+
+  
+      <!-- Placed at the end of the document so the pages load faster -->
+
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+      <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
+<<<<<<< HEAD
 
  
+=======
+>>>>>>> dda8576583d5497a92bfbe8a7eef899180552343

@@ -16,7 +16,7 @@
 					<li><a href="#contact">Contact</a></li>
 				</ul>-->
 				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">WELCOME <?php echo $_SESSION['username']; ?></a></li>
+					<li><a href="#">WELCOME <?php echo @$_SESSION['username']; ?></a></li>
 					<li><a href="../../index.php">LogOut</a></li>
 				</ul>
 			</div>

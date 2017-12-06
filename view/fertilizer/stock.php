@@ -50,7 +50,8 @@
 											<span class="glyphicon glyphicon-plus-sign"> Add
 										</button>
 										<br><br>
-										<table class="table table-bordered" id="stock_table">
+										<div id="stock_table">
+										<table class="table table-bordered">
 											<thead>
 												<tr>
 													<td width="20%"><b>Name</b></td>
@@ -67,6 +68,7 @@
 												?>
               								</tbody>
 										</table>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -99,9 +101,31 @@
 					<br>
 					<!--<label>Image</label>
 					<input type="file" name="file_name" id="item_image" />-->
+					<input type="hidden" name="fertilizerID" id="fertilizerID">
 				</div>
 				<div class="modal-footer">
-					<input type="submit" name="submit" value="Submit" class="btn main-color-bg" />
+					<input type="submit" name="submit" value="Submit" id="insert" class="btn main-color-bg" />
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</div>
+
+<div id="deleteStock" class="modal fade">
+	<div class="modal-dialog">
+		<form method="post" id="delete_stock_form">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Delete Item</h4>
+				</div>
+				<div class="modal-body">
+					<p>Are you sure you want to delete this item?</p>
+					<input type="hidden" name="deletedata" id="deletedata">
+				</div>
+				<div class="modal-footer">
+					<input type="submit" name="submit" value="Delete" id="delete" class="btn main-color-bg" />
 					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				</div>
 			</div>
@@ -118,7 +142,8 @@
 
 <script>
 	$(document).ready(function(){
-		$('#add_stock_form').on('submit',function(){
+		$('#add_stock_form').on('submit',function(event){
+			event.preventDefault();
 			$.ajax({
 				url:"add_stock.php",
 				method:"POST",
@@ -127,6 +152,47 @@
 				{
 					$('#add_stock_form')[0].reset();
 					$('#addStock').modal('hide');
+					$('#stock_table').html(data);
+				}
+			});
+		});
+
+		$(document).on('click', '.edit_data', function(){
+			var fertilizerID = $(this).attr("id");
+			$.ajax({
+				url:"fetch_stock.php",
+				method:"POST",
+				data:{fertilizerID:fertilizerID},
+				dataType:"json",
+				success:function(data)
+				{
+					$('#item_name').val(data.Fer_type);
+					$('#item_qty').val(data.Fer_quantity);
+					$('#item_price').val(data.Fer_price);
+					$('#fertilizerID').val(data.Fer_ID);
+					$('#insert').val('Update');
+					$('#addStock').modal('show');
+				}
+
+			});
+		});
+
+		$(document).on('click', '.delete_data', function(){
+			var del_fertilizerID = $(this).attr("id");
+			$('#deletedata').val(del_fertilizerID);
+			$('#deleteStock').modal('show');
+		});
+
+		$('#delete_stock_form').on('submit',function(event){
+			event.preventDefault();
+			$.ajax({
+				url:"add_stock.php",
+				method:"POST",
+				data:$('#delete_stock_form').serialize(),
+				success:function(data)
+				{
+					$('#delete_stock_form')[0].reset();
+					$('#deleteStock').modal('hide');
 					$('#stock_table').html(data);
 				}
 			});

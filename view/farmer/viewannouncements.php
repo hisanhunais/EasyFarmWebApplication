@@ -10,11 +10,11 @@
 	<?php
 
 			require("../../dbconfig/config.php");
-
+			$category = "";
 			$sql="SELECT * FROM announcement ORDER BY Date DESC" ; 
 
 			$res=Mysqli_query($con,$sql);
-			echo "<table border=0 class='table table-stripped table-hover'>
+			echo "<table class='table table-bordered'>
 							<tr>
 							
 							<th width='150px'>Date</th>
@@ -31,11 +31,11 @@
 					//echo "<div class='tbl'>";
 					//echo "<table border=0 >
 						echo "	<tr>
-							<td width='150px'>$row[1]</td>
-							<td width='150px'>$row[3]</td>
-							<td width='150px'>$row[4]</td>
+							<td width='25%'>$row[1]</td>
+							<td width='25%'>$row[3]</td>
+							<td width='25%'>$row[4]</td>
 							<!--<td width='250px'><button type='button' class='btn btn-secondary'><a href='announcementsDetailsScreen.php?id=$row[0]'>View Description</a></button></td>-->
-							<td width='250px'><button type='button' class='btn btn-secondary' data-toggle='modal' data-target='#viewDescription' onclick='getDetails($row[0])'>View Description</button></td>
+							<td width='25%'><center><button type='button' class='btn btn-info btn-sm' data-toggle='modal' data-target='#viewDescription' onclick='getDetails($row[0])'>View Description</button></center></td>
 							
 							</tr>
 						
@@ -56,7 +56,7 @@
 		$an_id = $_GET['id'];
 		$sql="SELECT * FROM announcement WHERE An_ID = '$an_id'";
 		$date = "";
-		$category = "";
+		//$category = "";
 		$title = "";
 		$description = "";
 		$res=mysqli_query($con,$sql)

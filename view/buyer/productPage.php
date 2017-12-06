@@ -266,8 +266,22 @@
 						  	</div>
 						  	<div class="col-md-3">
 						  	</div>
+						  	<br>
+						  </div>
+						  <div class="row">
+						  	<p>Delivery Required:</p>
+							  <div>
+							    <input type="radio" id="deliveryChoice1"
+							     name="delivery" value="Yes">
+							    <label for="deliveryChoice1">Yes</label>
+
+							    <input type="radio" id="deliveryChoice2"
+							     name="delivery" value="No" checked>
+							    <label for="deliveryChoice2">No</label>
+							  </div>
 						  </div>
 						  <br>
+						  <input type="hidden" name="availableqty" value="<?php echo $row[3];?>">
 						  <input name ="placeOrderBtn" type="submit" class="btn btn-success" value="Submit" />
 						  <label class="btn btn-danger btn-sm" id="cancel-order" style="margin-left:10px;"> 
 						  <span class="glyphicon glyphicon-remove"></span>Cancel</label>

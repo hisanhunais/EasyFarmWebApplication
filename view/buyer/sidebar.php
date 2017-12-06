@@ -1,7 +1,7 @@
 <?php
 
 // Initializing variables.
-$homeActive =  $paddyOrderActive = $transportActive = $reportActive = '';
+$homeActive =  $paddyOrderActive = $historyActive = $reportActive = '';
 $active = "active main-color-bg";
 
 switch(basename($_SERVER['PHP_SELF'])) {
@@ -13,8 +13,8 @@ switch(basename($_SERVER['PHP_SELF'])) {
         $paddyOrderActive = $active;
     break;
 
-    case 'transport.php':
-        $transportActive = $active;
+    case 'orderhistory.php':
+        $historyActive = $active;
     break;
 
     case 'report.php':
@@ -33,6 +33,6 @@ switch(basename($_SERVER['PHP_SELF'])) {
 <div class="list-group">
     <a href="home.php" id="homeBtn" class="list-group-item <?php echo $homeActive;?>"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> Home</a>
     <a href="order.php" id="paddyOrderBtn" class="list-group-item <?php echo $paddyOrderActive;?>"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Paddy Orders</a>
-    <a href="transport.php" id="transportBtn" class="list-group-item <?php echo $transportActive;?>"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span> Transport</a>
+    <a href="orderhistory.php" id="historyBtn" class="list-group-item <?php echo $historyActive;?>"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span> My Orders</a>
     <a href="report.php" id="reportBtn" class="list-group-item <?php echo $reportActive;?>"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
 </div>
