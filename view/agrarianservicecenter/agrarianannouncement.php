@@ -83,7 +83,7 @@
                       </div>
                         <div class="row">
                             <div class = "col-md-12" id="loadSection">
-                                 <?php include('announcement_view.php'); ?>       
+                                 <?php include('announcementview.php'); ?>       
                             </div>
                         </div>
                       </div>

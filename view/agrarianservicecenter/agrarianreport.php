@@ -1,10 +1,10 @@
-<<<<<<< HEAD
+
 <?php 
   include ('../../controller/func_agcnew.php');
-=======
+?>
 <?php
   //session_start();
->>>>>>> dda8576583d5497a92bfbe8a7eef899180552343
+
 ?>
 
 <!DOCTYPE html>
@@ -62,7 +62,7 @@
 
                 </div>
 
-<<<<<<< HEAD
+
   </head>
 
   <body>
@@ -170,8 +170,7 @@
 //                 total_production();
 ////                paddytype_details();
 //              ?>
-=======
->>>>>>> dda8576583d5497a92bfbe8a7eef899180552343
+
             </div>
           </div>
             </div>
@@ -263,8 +262,4 @@
       <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
-<<<<<<< HEAD
 
- 
-=======
->>>>>>> dda8576583d5497a92bfbe8a7eef899180552343

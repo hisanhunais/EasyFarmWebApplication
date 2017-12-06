@@ -23,7 +23,7 @@ switch(basename($_SERVER['PHP_SELF'])) {
         $annActive=$active;
     break;
 
-    case 'report.php':
+    case 'agrarianreport.php':
         $reportActive = $active;
     break;
 
