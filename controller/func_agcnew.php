@@ -30,6 +30,7 @@ function year(){
     </table>";
     total_production();
     Paddy_sales();
+//    meeting_details();
 }
 
 
@@ -416,6 +417,34 @@ function paddytype_array (){
                 $array_type=$data['Type_Value'];
             }
 
+        }
+    }
+}
+
+function meeting_details ()
+{
+    require 'connect.php';
+    if (isset($_POST['btn_generate'])) {
+        $selectyear = mysqli_real_escape_string($conn, $_REQUEST['year']);
+        $qur = "SELECT * FROM announcement WHERE Date LIKE '%$selectyear%' and type";
+
+        if ($result = mysqli_query($conn, $qur)) {
+
+
+            if (mysqli_num_rows($result) > 0) {
+
+                $total_Production = 0;
+                $in_ton = 0;
+                while ($row = mysqli_fetch_array($result)) {
+
+
+                    $total_Production = $total_Production + $row['Paddy_quantity'];
+                    $in_ton = $total_Production / 1000;
+
+                }
+
+
+            }
         }
     }
 }

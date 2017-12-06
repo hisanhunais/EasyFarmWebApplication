@@ -59,12 +59,12 @@
 
                       ?>
 
-                      <div class="container">
-                          <div class="wrapper">
+<!--                      <div class="container">-->
+                          <div class="col-md-12">
                               <div class="panel panel-default">
-                                  <div class="panel-heading"><h3>Reports</h3>
-
-                                  </div>
+<!--<!--                                  <div class="panel-heading"><h3>Reports</h3>-->
+<!---->
+<!--                                  </div>-->
                                   <div class="panel-body">
                                       <ul class="nav nav-tabs">
                                           <li class="active"><a data-toggle="tab" href="#home"><b>Summarised Paddy Report</b></a></li>
