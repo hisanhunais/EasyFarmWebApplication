@@ -1,5 +1,5 @@
 <?php 
-  include ('../../controller/func_agc.php');
+  include ('../../controller/func_agcnew.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -128,16 +128,17 @@
 
               <?php
                 year();
-                echo "</br>";
+
+//                echo "</br>";
 //               echo "<button type='button' class='btn btn-primary' name='btn_generate'>Generate Report</button>";
               ?>
                 <hr>
 
 
-              <?php
-                // total_production();
-                paddytype_details();
-              ?>
+<!--              --><?php
+//                 total_production();
+////                paddytype_details();
+//              ?>
             </div>
             <div id="menu1" class="tab-pane fade">
               <h3>Menu 1</h3>
@@ -177,6 +178,5 @@
     <script src="js/bootstrap.min.js"></script>
   </body>
 </html>
- n
- \
+
  
