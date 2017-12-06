@@ -63,8 +63,8 @@
 
                     	
 
-                      <td width='10%'><input type='button'  name='edit' value='View Description' id='<?php echo $row[0]; ?>' class='btn btn-info btn-sm edit_data' ></td>
-                      <td width='10%'><input type='button' data-toggle='modal' data-target='#deleteStock' name='delete' value='Delete' id='<?php echo $row[0]; ?>' class='btn btn-danger btn-sm delete_data' ></td>
+                      <td width='10%'><input type='button'  name='edit' value='View Description' id='".$row[0]."' class='btn btn-info btn-sm edit_data' ></td>
+                      <td width='10%'><input type='button' data-toggle='modal' data-target='#deleteStock' name='delete' value='Delete' id='".$row[0]."' class='btn btn-danger btn-sm delete_data' ></td>
                      
 
                             
@@ -153,6 +153,7 @@
 <script type="text/javascript">
     $(document).on('click', '.delete_data', function(){
       var del_fertilizerID = $(this).attr("id");
+      //alert(del_fertilizerID);
       $('#deletedata').val(del_fertilizerID);
       $('#deleteStock').modal('show');
     });
