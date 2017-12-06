@@ -1,11 +1,18 @@
 
 <?php 
   include ('../../controller/func_agcnew.php');
+<<<<<<< HEAD
 ?>
 <?php
   //session_start();
 
 ?>
+=======
+//<?php
+//  //session_start();
+//>>>>>>> dda8576583d5497a92bfbe8a7eef899180552343
+//?>
+>>>>>>> 19530972bfc40b0f05ebd6be420891467155b372
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,13 +62,17 @@
                 <div class="row">
 
                   <div class = "col-md-12" id="loadSection">
-                    <img src="../../Images/farmfinancetopheader" width="100%">
-                  </div>
+                      <?php
+                      require_once '../../controller/connect.php'
 
-                </div>
+                      ?>
 
-                </div>
+                      <div class="container">
+                          <div class="wrapper">
+                              <div class="panel panel-default">
+                                  <div class="panel-heading"><h3>Reports</h3>
 
+<<<<<<< HEAD
 
   </head>
 
@@ -177,89 +188,65 @@
 
         </div>
     </section>
+=======
+                                  </div>
+                                  <div class="panel-body">
+                                      <ul class="nav nav-tabs">
+                                          <li class="active"><a data-toggle="tab" href="#home"><b>Summarised Paddy Report</b></a></li>
+                                          <li><a data-toggle="tab" href="#menu1"><b>Farmer Profiles</b></a></li>
+                                          <li><a data-toggle="tab" href="#menu2"><b>Meetings</b></a></li>
+                                      </ul>
+>>>>>>> 19530972bfc40b0f05ebd6be420891467155b372
 
-    <?php include 'footer.php'; ?>
+                                      <div class="tab-content">
+                                          <div id="home" class="tab-pane fade in active">
 
 
-  
-      <!-- Placed at the end of the document so the pages load faster -->
 
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+                                              <br>
+                                              <!-- <h3>Paddy Report</h3> -->
 
-      <script src="js/bootstrap.min.js"></script>
-    </body>
-</html>
-<?php
-  //session_start();
-?>
+                                              <!-- <table class='table table-responsive'>
+                                              <tr>
+                                                <td><h4><b>Total Production</b></h4></td>
+                                              </tr>
+                                              </table> -->
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                                              <?php
+                                              year();
 
-      <title>Agrarian Service Center</title>
+                                              //                echo "</br>";
+                                              //               echo "<button type='button' class='btn btn-primary' name='btn_generate'>Generate Report</button>";
+                                              ?>
+                                              <hr>
 
-    <!-- Bootstrap core CSS -->
-      <link href="../../css/bootstrap.min.css" rel="stylesheet">
-  
-    <link href="../../css/homepage.css" rel="stylesheet">
 
-    <script
+                                              <!--              --><?php
+                                              //                 total_production();
+                                              ////                paddytype_details();
+                                              //              ?>
 
-        src="https://code.jquery.com/jquery-3.2.1.js"
-        integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
-        crossorigin="anonymous">
-          
-      </script>
+                                          </div>
+                                      </div>
+                                  </div>
 
-  
-
-    </head>
-
-    <body>
-
-    <?php include 'header.php'; ?>
-  
-    <section id="main">
-        <div class="container-fluid">
-            <div class="row">
-              <!-- include side bar -->
-                <div class="col-md-3">
-                     <?php include 'sidebar.php'; ?>
-                </div>
-
-          <div class="col-md-9">
-            <div class="panel panel-default">
-
-                <div class="panel-body">
-                <div class="row">
-
-                  <div class = "col-md-12" id="loadSection">
-                    <img src="../../Images/farmfinancetopheader" width="100%">
-                  </div>
-
-                </div>
-
-                </div>
-
-            </div>
-          </div>
-            </div>
-
-        </div>
+                              </div>
     </section>
 
     <?php include 'footer.php'; ?>
 
 
-  
-      <!-- Placed at the end of the document so the pages load faster -->
 
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- Placed at the end of the document so the pages load faster -->
 
-      <script src="js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+
+    <script src="js/bootstrap.min.js"></script>
+                  </div>
+
+                </div>
+
+                </div>
     </body>
 </html>
 
