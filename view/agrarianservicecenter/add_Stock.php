@@ -13,65 +13,60 @@
 		}
 		else
 		{
-		$fname = mysqli_real_escape_string($conn,$_POST['firstname']);
-		$lname = mysqli_real_escape_string($conn,$_POST['lastname']);
-		$adno = mysqli_real_escape_string($conn,$_POST['addressNo']);
-		$street = mysqli_real_escape_string($conn,$_POST['Street']);
-		$contactno = mysqli_real_escape_string($conn,$_POST['contactno']);
-		$username = mysqli_real_escape_string($conn,$_POST['username']);
-		$password = mysqli_real_escape_string($conn,$_POST['password']);
-		$cpassword = mysqli_real_escape_string($conn,$_POST['cpassword']);
-		$city = mysqli_real_escape_string($conn,$_POST['City']);
-		$type='Farmer';
+		$date = mysqli_real_escape_string($conn,$_POST['date']);
+		$time = mysqli_real_escape_string($conn,$_POST['time']);
+		$category = mysqli_real_escape_string($conn,$_POST['category']);
+		$topic = mysqli_real_escape_string($conn,$_POST['topic']);
+		$des = mysqli_real_escape_string($conn,$_POST['des']);
+		// $date1 = new DateTime("now", new DateTimeZone('Asia/Colombo') );
+		// $date = $date1->format('Y-m-d');
+		
 
-
-		if($_POST['username'] != '')
+		if($_POST['fertilizerID'] != '')
 		{
-			// 			$query = "UPDATE login SET username = '$username',  = '$price', Fer_quantity = '$qty' WHERE username = '".$_POST['username']."'";
-			// $message = "Data Updated";
-				
+			$query = "UPDATE fertilizer SET Fer_type = '$name', Fer_price = '$price', Fer_quantity = '$qty' WHERE Fer_ID = '".$_POST['fertilizerID']."'";
+			$message = "Data Updated";
 				
 		}
 		else
 		{
-			$query = "INSERT INTO login VALUES('$username','$fname','$lname','$adno','$street','$city','$password','$contactno','$type')";
+			$query = "INSERT INTO announcement VALUES('$date','$time','$category','$topic','$des')";
 			$message = "Data Inserted";	
 		}
 		}
 
 		
 
-	// 	if(mysqli_query($conn,$query))
-	// 	{
-	// 		$output .= '<label class="text-success">'.$message.'</label>';
-	// 		$select_query = "SELECT * FROM login where type='Farmer'";
-	// 		$result = mysqli_query($conn,$select_query);
-	// 		$output .= '
-	// 			<table class="table table-bordered">
-	// 					<tr>
- //                                  <td width="20%"><b>Username</b></td>
- //                                  <td width="20%"><b>First Name</b></td>
- //                                  <td width="20%"><b>Last Name (kg)</b></td>
- //                                  <td width="20%"><b>Contact No</b></td>
- //                                  <td width="10%"></td>
- //                                  <td width="10%"></td>
-	// 					</tr>
-	// 		';
-	// 		while($row = mysqli_fetch_row($result))
-	// 		{
-	// 			$output .= '
- //                              <tr>
- //                                <td width="20%"><?php echo $row[0]; ?></td>
- //                                <td width="20%"><?php echo $row[1]; ?></td>
- //                                <td width="20%"><?php echo $row[2]; ?></td>
- //                                <td width="20%"><?php echo $row[3]; ?><!--<img src="<?php #echo $imgsrc; ?>" width="50" height="35" class="img-thumbnail" alt="image">--></td>
- //                                <td width="10%"><input type="button" name="edit" value="Edit" id="<?php echo $row[0]; ?>" class="btn btn-info btn-xs edit_data" ></td>
- //                                <td width="10%"><input type="button" name="delete" value="Delete" id="<?php echo $row[0]; ?>" class="btn btn-info btn-xs delete_data" ></td>
- //                              </tr>
-	// 			';
-	// 		}
-	// 		$output .= '</table>';
-	// 	}
-	// 	echo $output;
-	// }
+		if(mysqli_query($conn,$query))
+		{
+			$output .= '<label class="text-success">'.$message.'</label>';
+			$select_query = "SELECT * FROM announcement";
+			$result = mysqli_query($conn,$select_query);
+			$output .= '
+				<table class="table table-bordered">
+                        <tr>
+                    <th width="25%">Date</th>
+                  <th width="25%">Announcement type</th>
+                    <th width="25%">Time</th>
+                    <th width="10%"></th>
+                    <th width="10%"></th>
+                        </tr>
+			';
+			while($row = mysqli_fetch_row($result))
+			{
+				$output .= '
+					<tr>
+					  	<td width="20%">'.$row[1].'</td>
+						<td width="20%">'.$row[3].'</td>
+						<td width="20%">'.$row[2].'</td>
+						<td width="20%">Image<!--<img src="<?php echo $imgsrc; ?>" width="50" height="35" class="img-thumbnail" alt="image">--></td>
+						<td width="10%"><input type="button" name="edit" value="Edit" id="'.$row[0].'" class="btn btn-info btn-sm edit_data" ></td>
+						<td width="10%"><input type="button" name="delete" value="Delete" id="'.$row[0].'" class="btn btn-danger btn-sm delete_data" ></td>
+					</tr>
+				';
+			}
+			$output .= '</table>';
+		}
+		echo $output;
+	}
 ?>

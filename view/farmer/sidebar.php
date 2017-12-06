@@ -33,7 +33,7 @@ switch(basename($_SERVER['PHP_SELF'])) {
         $discussionForumActive = $active;
     break;
 
-    case 'report.php':
+    case 'report_paddy.php':
         $reportActive = $active;
     break;
 
@@ -54,5 +54,5 @@ switch(basename($_SERVER['PHP_SELF'])) {
     <a href="transport.php" id="transportBtn" class="list-group-item <?php echo $transportActive;?>"><span class="glyphicon glyphicon-plane" aria-hidden="true"></span> Transport</a>
     <a href="announcement.php" id="announcementBtn" class="list-group-item <?php echo $announcementActive;?>"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Announcements</a>
     <a href="discussionForum.php" id="discussionBtn" class="list-group-item <?php echo $discussionForumActive;?>"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Discussion Forum</a>
-    <a href="report.php" id="reportBtn" class="list-group-item <?php echo $reportActive;?>"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
+    <a href="report_paddy.php" id="reportBtn" class="list-group-item <?php echo $reportActive;?>"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Reports</a>
 </div>
