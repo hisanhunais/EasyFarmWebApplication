@@ -25,6 +25,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+  <script type="text/javascript">
+	function PreviewImage()
+	{
+		var oFReader = new FileReader();
+		oFReader.readAsDataURL(document.getElementById("imgLink").files[0]);
+		oFReader.onload = function(oFREvent)
+		{
+			document.getElementById("uploadPreview").src = oFREvent.target.result;
+		};
+	};
+</script>
+
   </head>
 
   <body>
@@ -57,9 +69,8 @@
 													<td width="20%"><b>Name</b></td>
 													<td width="20%"><b>Price (Rs)</b></td>
 													<td width="20%"><b>Quantity (kg)</b></td>
-													<td width="20%"><b>Image</b></td>
-													<td width="10%"></td>
-													<td width="10%"></td>
+													<td width="20%"></td>
+													<td width="20%"></td>
 												</tr>
 											</thead>
 											<tbody>
@@ -91,7 +102,34 @@
 				</div>
 				<div class="modal-body">
 					<label>Item Name</label>
-					<input type="text" name="item_name" id="item_name" class="form-control" required="" />
+					<select name="item_name" class="form-control" id="sel">
+						<option value="default">Select an Item</option>
+					<?php
+						require("../../dbconfig/config.php");
+
+						$sql = "SELECT * FROM paddyType";
+						$rs_result = mysqli_query($con,$sql);
+
+						while($row = mysqli_fetch_row($rs_result))
+						{
+					?>
+					
+  						<option value="<?php echo $row[1]; ?>"><?php echo $row[1]; ?></option>
+					
+					<?php
+						}
+
+					?>
+					</select>
+
+					<br>
+					<center>
+					<div>
+						<img id="uploadPreview" src="http://placehold.it/320x150" alt="" width="320px" height="150px">
+						<input type="hidden" name="attachdata" id="attachdata">
+					</div>
+					</center>
+					<!--<input type="text" name="item_name" id="item_name" class="form-control" required="" />-->
 					<br>
 					<label>Quantity</label>
 					<input type="number" name="item_qty" id="item_qty" class="form-control" required="" />
@@ -198,5 +236,14 @@
 			});
 		});
 	});
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#sel").change(function() {
+        var imgUrl = $(this).val();
+        $("#uploadPreview").attr("src", imgUrl);
+    });
+});
 </script>
 

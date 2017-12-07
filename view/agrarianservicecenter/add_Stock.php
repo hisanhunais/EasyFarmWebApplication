@@ -6,9 +6,9 @@
 		$output = '';
 		$message = '';
 
-		if(isset($_POST['deletedata']))
+		if(isset($_REQUEST['deletedata']))
 		{
-			$query = "DELETE FROM announcement WHERE An_ID = '".$_POST['deletedata']."'";
+			$query = "DELETE FROM announcement WHERE An_ID = '".$_REQUEST['deletedata']."'";
 			$message = "Data Deleted";
 		}
 		else

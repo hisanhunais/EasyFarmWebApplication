@@ -91,6 +91,11 @@
 					  <div class="panel-body">
 						<div class="row">
 							<div class = "col-md-12" id="loadSection">
+								<ul class="nav nav-tabs">
+								  <li class="active"><a data-toggle="tab" href="#pending">Pending</a></li>
+								  <li><a data-toggle="tab" href="#dispatched">Dispatched</a></li>
+								  <li><a data-toggle="tab" href="#completed">Completed</a></li>
+								</ul>
 								<?php include 'paddyOrderContent1.php';?>
 							</div>
 						</div>

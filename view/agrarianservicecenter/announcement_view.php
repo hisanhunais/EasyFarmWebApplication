@@ -17,6 +17,43 @@
                     <th width='25%'>Time</th>
                     <th width='10%'></th>
                     <th width='10%'></th>
+<<<<<<< HEAD
+
+                </tr>";
+                //echo "</table>";
+
+                if ($res){
+                	while($row=mysqli_fetch_row($res)){
+
+                	echo "  
+                	<tr>
+
+                   		<td width='25%'>$row[1]</td>
+                    	<td width='25%'>$row[3]</td>
+                    	<td width='25%'>$row[2]</td>
+
+                    	
+
+                      <td width='10%'><input type='button'  name='edit' value='View Description' id='".$row[0]."' class='btn btn-info btn-sm edit_data' ></td>
+                      <td width='10%'><input type='button' data-toggle='modal' data-target='#deleteStock' name='delete' value='Delete' id='".$row[0]."' class='btn btn-danger btn-sm delete_data' ></td>
+                     
+
+                            
+                	</tr>
+                        
+                	";
+                    
+                	}
+                
+                echo "</table>";
+
+                }else{
+                    echo "error";
+                }
+
+            ?>
+                                               
+=======
                         </tr>
                       </thead>
                       <tbody>
@@ -74,6 +111,7 @@ while($row = mysqli_fetch_row($rs_result))
               </div>
             </div>
           </div>    
+>>>>>>> ed779bfc23ee253ff3dba30fd8195b28e535ba29
         </div>
           </div>
       </div>
@@ -195,6 +233,7 @@ while($row = mysqli_fetch_row($rs_result))
 
     $(document).on('click', '.delete_data', function(){
       var del_fertilizerID = $(this).attr("id");
+      //alert(del_fertilizerID);
       $('#deletedata').val(del_fertilizerID);
       $('#deleteStock').modal('show');
     });

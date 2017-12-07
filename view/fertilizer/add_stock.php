@@ -19,6 +19,15 @@
 		$date1 = new DateTime("now", new DateTimeZone('Asia/Colombo') );
 		$date = $date1->format('Y-m-d');
 		$username = "AmalPerera";
+		$img_name = $_FILES['imgLink']['name'];
+		$img_size = $_FILES['imgLink']['size'];
+		$img_tmp = $_FILES['imgLink']['tmp_name'];
+		$directory = "uploads/";
+		$subdirectory = "fertilizer/";
+		$target_file = $directory.$subdirectory.$img_name;
+		$db_file = "../../".$target_file;
+
+		move_uploaded_file($img_tmp, $db_file);			
 
 		if($_POST['fertilizerID'] != '')
 		{
@@ -28,7 +37,7 @@
 		}
 		else
 		{
-			$query = "INSERT INTO fertilizer VALUES('7','$name','$price','$qty','$date','$username')";
+			$query = "INSERT INTO fertilizer VALUES('11','$name','$price','$qty','$date','$username','$target_file')";
 			$message = "Data Inserted";	
 		}
 		}
@@ -37,7 +46,7 @@
 
 		if(mysqli_query($conn,$query))
 		{
-			$output .= '<label class="text-success">'.$message.'</label>';
+			$output .= '<label class="alert alert-success">'.$message.'</label>';
 			$select_query = "SELECT * FROM fertilizer";
 			$result = mysqli_query($conn,$select_query);
 			$output .= '
