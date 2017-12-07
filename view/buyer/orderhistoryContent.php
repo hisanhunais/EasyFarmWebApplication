@@ -21,6 +21,24 @@
 <body>
 
 <?php
+
+	if(isset($_POST['attachdata']))
+{
+			
+	
+	$img_name = $_FILES['imgLink']['name'];
+	$img_size = $_FILES['imgLink']['size'];
+	$img_tmp = $_FILES['imgLink']['tmp_name'];
+	$directory = "uploads/";
+	$target_file = $directory.$img_name;
+	$db_file = "../../".$target_file;
+
+	move_uploaded_file($img_tmp, $db_file);
+
+	$query = "UPDATE ordertable SET advance_receipt = '".$db_file."' WHERE Ord_No = '".$_POST['attachdata']."'";
+	$query_run = mysqli_query($con,$query);
+	
+}
 	$sql1="SELECT * FROM ordertable WHERE buyer_username = 'Nimal' AND status = 'Pending' ORDER BY ord_Date DESC";
 	$res1=mysqli_query($con,$sql1) or die(mysqli_error($con));
 
@@ -30,13 +48,13 @@
 	$sql3="SELECT * FROM ordertable WHERE buyer_username = 'Nimal' AND status = 'Completed' ORDER BY ord_Date DESC";
 	$res3=mysqli_query($con,$sql3) or die(mysqli_error($con));
 ?>
-	<ul class="nav nav-tabs">
+	<!--<ul class="nav nav-tabs">
 	  <li class="active"><a data-toggle="tab" href="#pending">Pending</a></li>
 	  <li><a data-toggle="tab" href="#dispatched">Dispatched</a></li>
 	  <li><a data-toggle="tab" href="#completed">Completed</a></li>
-	</ul>
+	</ul>-->
 
-	<div class="tab-content">
+	<div class="tab-content" id="orderTabs">
 		<br>
 	  <div id="pending" class="tab-pane fade in active">
 	  	<table class ="table table-striped table-hover">
@@ -64,7 +82,7 @@
 				<td><input type="button" name="view" value="View Details" id="<?php echo $row[0]; ?>" class="view_details btn btn-info btn-xs" /></td>
 				<td>
 		<?php
-			if($row[10] != "None")
+			if($row[8]=="Yes" && $row[10] == "None")
 			{
 		?>
 				<input type="button" name="attachview" value="Attach Receipt" id="<?php echo $row[0]; ?>" class="attach_receipt btn btn-info btn-xs" />
@@ -224,7 +242,7 @@
 				{
 					$('#complete_order_form')[0].reset();
 					$('#completeOrder').modal('hide');
-					$('#pending').html(data);
+					$('#orderTabs').html(data);
 				}
 			});
 		});
@@ -237,8 +255,15 @@
 
 		$('#attach_receipt_form').on('submit',function(event){
 			event.preventDefault();
+
+			if(document.getElementById("imgLink").value == "")
+			{
+				alert("Please Upload an Image");
+			}
+			else
+			{
 			$.ajax({
-				url:"processReceipt.php",
+				url:"orderhistoryContent.php",
 				method:"POST",
 				data:new FormData(this),
 				contentType: false,
@@ -248,9 +273,10 @@
 				{
 					$('#attach_receipt_form')[0].reset();
 					$('#attachReceipt').modal('hide');
-					$('#pending').html(data);
+					$('#orderTabs').html(data);
 				}
 			});
+			}
 		});
 
 		/*$(document).on('click','.receipt',function(event){

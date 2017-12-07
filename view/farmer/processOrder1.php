@@ -9,26 +9,34 @@
 <body>
 
 <?php
+
 	$output = '';
 		$message = '';
 		$query = '';
 
 		if(isset($_POST['completedata']))
 		{
-			$query = "UPDATE ordertable SET status = 'Completed' WHERE Ord_No = '".$_POST['completedata']."'";
-			$res = mysqli_query($con,$query) or die(mysqli_error($con));		
+			$query = "UPDATE ordertable SET status = 'Completed' WHERE Ord_No = '".$_POST['completedata']."'";		
 		}
 
 		else if(isset($_POST['proceeddata']))
 		{
-			$query = "UPDATE ordertable SET status = 'Ready' WHERE Ord_No = '".$_POST['proceeddata']."'";	
-			$res = mysqli_query($con,$query) or die(mysqli_error($con));	
+			$query = "UPDATE ordertable SET status = 'Ready' WHERE Ord_No = '".$_POST['proceeddata']."'";		
 		}
 
+		else
+		{
+			?>
+			<ul class="nav nav-tabs">
+	  <li class="active"><a data-toggle="tab" href="#pending">Pending</a></li>
+	  <li><a data-toggle="tab" href="#dispatched">Dispatched</a></li>
+	  <li><a data-toggle="tab" href="#completed">Completed</a></li>
+	</ul>
 
+			<?php
+		}
 
-		//$res = mysqli_query($con,$query) or die(mysqli_error($con));
-
+		$res = mysqli_query($con,$query) or die(mysqli_error($con));
 	$sql1="SELECT * FROM ordertable WHERE seller_username = 'KamalPerera' AND status = 'Pending' ORDER BY ord_Date DESC";
 	$res1=mysqli_query($con,$sql1) or die(mysqli_error($con));
 
@@ -38,13 +46,9 @@
 	$sql3="SELECT * FROM ordertable WHERE seller_username = 'KamalPerera' AND status = 'Completed' ORDER BY ord_Date DESC";
 	$res3=mysqli_query($con,$sql3) or die(mysqli_error($con));
 ?>
-	<!--<ul class="nav nav-tabs">
-	  <li class="active"><a data-toggle="tab" href="#pending">Pending</a></li>
-	  <li><a data-toggle="tab" href="#dispatched">Dispatched</a></li>
-	  <li><a data-toggle="tab" href="#completed">Completed</a></li>
-	</ul>-->
+	
 
-	<div class="tab-content" id="orderTabs">
+	<div class="tab-content">
 		<br>
 	  <div id="pending" class="tab-pane fade in active">
 	  	<table class ="table table-striped table-hover">
@@ -247,14 +251,14 @@
 		$('#complete_order_form').on('submit',function(event){
 			event.preventDefault();
 			$.ajax({
-				url:"processOrder1.php",
+				url:"processOrder.php",
 				method:"POST",
 				data:$('#complete_order_form').serialize(),
 				success:function(data)
 				{
 					$('#complete_order_form')[0].reset();
 					$('#completeOrder').modal('hide');
-					$('#orderTabs').html(data);
+					$('#pending').html(data);
 				}
 			});
 		});
@@ -268,14 +272,14 @@
 		$('#proceed_order_form').on('submit',function(event){
 			event.preventDefault();
 			$.ajax({
-				url:"processOrder1.php",
+				url:"processOrder.php",
 				method:"POST",
 				data:$('#proceed_order_form').serialize(),
 				success:function(data)
 				{
 					$('#proceed_order_form')[0].reset();
 					$('#proceedOrder').modal('hide');
-					$('#orderTabs').html(data);
+					$('#pending').html(data);
 				}
 			});
 		});

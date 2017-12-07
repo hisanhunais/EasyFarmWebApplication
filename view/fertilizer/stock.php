@@ -25,6 +25,18 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+  <script type="text/javascript">
+	function PreviewImage()
+	{
+		var oFReader = new FileReader();
+		oFReader.readAsDataURL(document.getElementById("imgLink").files[0]);
+		oFReader.onload = function(oFREvent)
+		{
+			document.getElementById("uploadPreview").src = oFREvent.target.result;
+		};
+	};
+</script>
+
   </head>
 
   <body>
@@ -83,7 +95,7 @@
 
 <div id="addStock" class="modal fade">
 	<div class="modal-dialog">
-		<form method="post" id="add_stock_form">
+		<form method="post" id="add_stock_form" enctype="multipart/form-data">
 			<div class="modal-content">
 				<div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -92,6 +104,17 @@
 				<div class="modal-body">
 					<label>Item Name</label>
 					<input type="text" name="item_name" id="item_name" class="form-control" required="" />
+					<br>
+
+					<input type="file" id="imgLink" name="imgLink" accept=".jpg,.jpeg,.png" onchange="PreviewImage();">
+					
+					<br>
+					<center>
+					<div>
+						<img id="uploadPreview" src="http://placehold.it/320x150" alt="" width="320px" height="150px">
+						<input type="hidden" name="attachdata" id="attachdata">
+					</div>
+					</center>
 					<br>
 					<label>Quantity</label>
 					<input type="number" name="item_qty" id="item_qty" class="form-control" required="" />
@@ -147,7 +170,10 @@
 			$.ajax({
 				url:"add_stock.php",
 				method:"POST",
-				data:$('#add_stock_form').serialize(),
+				data:new FormData(this),
+				contentType: false,
+				cache: false,
+				processData:false,
 				success:function(data)
 				{
 					$('#add_stock_form')[0].reset();
