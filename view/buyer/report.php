@@ -1,7 +1,10 @@
 <?php
 	//session_start();
 ?>
-
+<?php
+include ('../../controller/func_buyer.php');
+include ('../../controller/functions.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -82,7 +85,13 @@
 					  <div class="panel-body">
 						<div class="row">
 							<div class = "col-md-12" id="loadSection">
-								<img src="../../Images/farmfinancetopheader" width="100%">
+                                <?php
+                                require_once '../../controller/connect.php';
+
+
+
+                                select_year ();
+                                ?>
 							</div>
 						</div>
 					  </div>

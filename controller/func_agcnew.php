@@ -35,6 +35,7 @@ function year(){
     // functions to call
     total_production();
     Paddy_sales();
+
 //    meeting_details();
 //    new_profiles();
 //
@@ -75,6 +76,7 @@ function total_production() {
                /=";
                     echo "<hr>";
                 echo "";
+                echo "<h4>Paddy Production Details for each Paddy Type</h4>";
               paddy_production($selectyear,$total_Production);
 
 
@@ -87,6 +89,7 @@ function total_production() {
 }
 //paddy production for the period
 function paddy_production($selectyear,$total_Production){
+
     require 'connect.php';
 
 //    echo "<table class='table table-bordered'>";
@@ -99,7 +102,7 @@ function paddy_production($selectyear,$total_Production){
 //                            ";
     $sql="SELECT * FROM paddytype ";// selecting the paddy types  in the datbase
     if($reslt = mysqli_query($conn, $sql)){
-        echo "<h4>Paddy Production Details for each Paddy Type</h4>";
+
         if(mysqli_num_rows($reslt) > 0) {
 
             while ($data = mysqli_fetch_array($reslt)) {
@@ -157,6 +160,16 @@ function paddy_production($selectyear,$total_Production){
 //                        }
 
                         }
+                        //assign total production to array
+//                        $array_tpnow[0]=$selectyear;
+//                        $array_tpnow[1]=$total_Production;
+//                        $array_tpnow[2]=$totalpro_inton;
+//                        //total production cost in to array
+//                        $array_costnow[0]=$selectyear;
+//                        $array_costnow[1]=$total_Production;
+//                        $array_costnow[2]=$totalpro_inton;
+//
+//                        production_bar($array_costnow,$array_tpnow);
 
              echo "           
         
@@ -197,12 +210,12 @@ function paddy_production($selectyear,$total_Production){
                         <td class='col-md-6'>Maximum Paddy Price</td>
                         <td class='col-md-2'>Rs. ".max($max_value)."</td>
                     </tr>
-                    <tr>
+                    <t>
                         
                        
                         <td class='col-md-6'>Minimum Paddy Price</td>
                         <td class='col-md-2'>Rs. ".min($max_value)."</td>
-                    </tr>";
+                    </tr></h5></b>";
 
 //                    echo "
 ////                    <tr>
@@ -310,7 +323,11 @@ function Paddy_sales(){
 
         $selectyear = mysqli_real_escape_string($conn, $_REQUEST['year']);
 //    echo "<h3>Total Production For the Period For each Paddy Type</h3>";
-        echo "<h4>Paddy Production Details for each Paddy Type</h4>";
+
+        echo "<br>
+<h3><b>Paddy Production ".$selectyear."</b></h3><hr>";
+
+        echo "<h4>Paddy Sales for each Paddy Type</h4>";
 //        echo "<table class='table table-bordered'>";
 //        echo "<thead>
 //                            <tr style='background-color: #EBEDEF'><h3><b>
@@ -336,11 +353,11 @@ function Paddy_sales(){
 
 //                    production_yala($type);
 
-                    $qur = "SELECT * FROM ordertable WHERE Product='Samba' and Ord_Date='2017' and status='completed'";//add period
+                    $qur = "SELECT * FROM ordertable WHERE Product='Samba' and Ord_Date='2017'";//add period
 
                     if ($result = mysqli_query($conn, $qur)) {
 
-                        echo "ewfrget";
+
                         if (mysqli_num_rows($result) > 0) {
 
                             $sum = 0;

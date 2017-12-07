@@ -1,6 +1,7 @@
 
 <?php 
   include ('../../controller/func_agcnew.php');
+include ('../../controller/func_agcgraph.php');
 //<?php
 //  //session_start();
 //>>>>>>> dda8576583d5497a92bfbe8a7eef899180552343

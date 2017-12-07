@@ -44,6 +44,7 @@ function select_year(){
     require 'connect.php';
 
     echo "
+    <form class='form-inline' method='POST' action='report.php'>
     <fieldset>
     <div align='left'>
     <label for='seyear'>Select year</label>
@@ -67,7 +68,8 @@ function select_year(){
     echo "</fieldset>
     
 
-    </table>";
+    </table>
+    </form>";
 
 
     // generate();
