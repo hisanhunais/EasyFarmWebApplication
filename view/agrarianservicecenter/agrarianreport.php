@@ -102,9 +102,27 @@
 
                                           </div>
                                       </div>
+                                      <div class="tab-content">
+                                          <div id="menu1" class="tab-pane fade in active">
+
+
+
+                                              <br>
+
+
+                                              <?php
+//                                              new_profiles();
+
+
+                                              ?>
+
+
+
+                                          </div>
+                                      </div>
                                   </div>
 
-                              </div>
+
     </section>
 
     <?php include 'footer.php'; ?>

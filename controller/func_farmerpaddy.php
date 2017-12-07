@@ -215,9 +215,9 @@ $length=0;
                   </table>
                     ";
 //1111111111111111111111111111111111
-//        if ($length>1){
-//            Calculate_bytype($selectyear,$selectseason,$Paddy_array);
-//        }
+        if ($length>1){
+            Calculate_bytype($selectyear,$selectseason,$Paddy_array);
+        }
         }
 
         function paddy_sales()
@@ -372,51 +372,51 @@ $length=0;
 //
 //}
 //11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111
-//function calculate_bytype($selectyear,$selectseason,$Paddy_array){
-//    require 'connect.php';
-//    GLOBAL $sessionID;
-//    foreach ($Paddy_array as $value) {
-//
-//        $qur = "SELECT * FROM paddy WHERE Paddy_season LIKE '%" . $selectseason . "&' and Paddy_year LIKE '%" . $selectyear . "%' and Paddy_type LIKE '%" . $value . "%'  and farmer_username LIKE '%" . $sessionID . "%'";
+function calculate_bytype($selectyear,$selectseason,$Paddy_array){
+    require 'connect.php';
+    GLOBAL $sessionID;
+    foreach ($Paddy_array as $value) {
+
+        $qur = "SELECT * FROM paddy WHERE Paddy_season LIKE '%" . $selectseason . "&' and Paddy_year LIKE '%" . $selectyear . "%' and Paddy_type LIKE '%" . $value . "%'  and farmer_username LIKE '%" . $sessionID . "%'";
 //        echo $selectseason;
 //        echo $selectyear;
-//        if ($result = mysqli_query($conn, $qur)) {
-//
-//            if (mysqli_num_rows($result) > 0) {
-//
-//                $pro_unit=0;
-//
-//                $pro_value=0;
-//                while ($row = mysqli_fetch_array($result)) {
-//                    $pro_unit=$pro_unit+$row['Paddy_quantity'];
-//                    $pro_inton=$pro_unit/1000;
-//                    $value_per=$row['Paddy_price']*$row['Paddy_quantity'];
-//                    $pro_value=$pro_value+$value_per;
-//
-//                }
-//                echo "
-//                  <table border='0'>
-//                    <tbody><b><h5>
-//                    <tr>
-//
-//                        <td class='col-md-8'><ul><li>Total Production for the Period in each Paddy Type </li></ul></td>
-//                        <td class='col-md-4'>- " . number_format($pro_unit) . "Kg (" . $pro_inton . " Metric Tons)</td>
-//                    </tr>
-//
-//
-//                    <tr>
-//                        <td class='col-md-8'><ul><li>Total production cost</li></ul></td>
-//                        <td class='col-md-4'>- Rs. " . number_format($pro_value) . "/=</td>
-//                    </tr>
-//                    </h5>
-//                    </b>
-//                    </tbody>
-//                  </table>
-//                    ";
-//            } else {
-//                echo "<h3><e>No results found</e></h3>";
-//            }
-//        }
-//    }
-//}
+        if ($result = mysqli_query($conn, $qur)) {
+
+            if (mysqli_num_rows($result) > 0) {
+
+                $pro_unit=0;
+
+                $pro_value=0;
+                while ($row = mysqli_fetch_array($result)) {
+                    $pro_unit=$pro_unit+$row['Paddy_quantity'];
+                    $pro_inton=$pro_unit/1000;
+                    $value_per=$row['Paddy_price']*$row['Paddy_quantity'];
+                    $pro_value=$pro_value+$value_per;
+
+                }
+                echo "
+                  <table border='0'>
+                    <tbody><b><h5>
+                    <tr>
+
+                        <td class='col-md-8'><ul><li>Total Production for the Period in each Paddy Type </li></ul></td>
+                        <td class='col-md-4'>- " . number_format($pro_unit) . "Kg (" . $pro_inton . " Metric Tons)</td>
+                    </tr>
+
+
+                    <tr>
+                        <td class='col-md-8'><ul><li>Total production cost</li></ul></td>
+                        <td class='col-md-4'>- Rs. " . number_format($pro_value) . "/=</td>
+                    </tr>
+                    </h5>
+                    </b>
+                    </tbody>
+                  </table>
+                    ";
+            } else {
+                echo "<h3><e>No results found</e></h3>";
+            }
+        }
+    }
+}
 ?>
